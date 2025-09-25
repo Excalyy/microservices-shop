@@ -16,7 +16,6 @@ class JWTAuthenticationMiddleware:
             if auth_header and auth_header.startswith('Bearer '):
                 token = auth_header.split(' ')[1]
                 # В реальном приложении здесь была бы проверка токена через user-service
-                # Пока что просто пропускаем
                 pass
 
         response = self.get_response(request)
