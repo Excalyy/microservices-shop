@@ -9,7 +9,7 @@
             <svg class="w-4 h-4 mr-2 text-gray-600" fill="currentColor" viewBox="0 0 20 20">
               <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path>
             </svg>
-            Home
+            Домой
           </router-link>
         </li>
         <li>
@@ -17,7 +17,7 @@
             <svg class="w-5 h-5 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
               <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
             </svg>
-            <router-link to="/orders" class="ml-2 text-gray-600 hover:text-gray-900 text-sm font-medium">Orders</router-link>
+            <router-link to="/orders" class="ml-2 text-gray-600 hover:text-gray-900 text-sm font-medium">Заказы</router-link>
           </div>
         </li>
         <li v-if="order">
@@ -25,7 +25,7 @@
             <svg class="w-5 h-5 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
               <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
             </svg>
-            <span class="ml-2 text-gray-500 text-sm font-medium">Order #{{ order.id }}</span>
+            <span class="ml-2 text-gray-500 text-sm font-medium">Заказ #{{ order.id }}</span>
           </div>
         </li>
       </ol>
@@ -33,7 +33,7 @@
 
     <!-- Loading State -->
     <div v-if="loading" class="flex justify-center py-16">
-      <LoadingSpinner size="lg" text="Loading order..." />
+      <LoadingSpinner size="lg" text="Загрузка заказа..." />
     </div>
 
     <!-- Error State -->
@@ -43,11 +43,11 @@
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z" />
         </svg>
       </div>
-      <h3 class="mt-4 text-lg font-semibold text-gray-900">Order not found</h3>
+      <h3 class="mt-4 text-lg font-semibold text-gray-900">Заказ не найден</h3>
       <p class="mt-2 text-sm text-gray-500">{{ error }}</p>
       <div class="mt-6">
         <BaseButton variant="primary" @click="$router.push('/orders')">
-          Back to Orders
+          Обратно к заказам
         </BaseButton>
       </div>
     </div>
@@ -58,8 +58,8 @@
       <div class="bg-white rounded-lg shadow-sm border border-gray-100 p-6">
         <div class="flex items-center justify-between mb-6">
           <div>
-            <h1 class="text-2xl font-bold text-gray-900">Order #{{ order.id }}</h1>
-            <p class="text-sm text-gray-500 mt-1">Placed on {{ formatDate(order.created_at) }}</p>
+            <h1 class="text-2xl font-bold text-gray-900">Заказ #{{ order.id }}</h1>
+            <p class="text-sm text-gray-500 mt-1">Создан {{ formatDate(order.created_at) }}</p>
           </div>
           <div class="text-right">
             <span :class="getStatusClasses(order.status)" class="inline-block px-3 py-1 rounded-full text-sm font-medium">
@@ -74,23 +74,23 @@
         <!-- Order Summary -->
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div>
-            <h3 class="text-sm font-semibold text-gray-900 mb-2">Customer Information</h3>
+            <h3 class="text-sm font-semibold text-gray-900 mb-2">Информация о клиенте</h3>
             <div class="text-sm text-gray-600">
               <p>{{ order.user_name }}</p>
               <p>{{ order.user_email }}</p>
             </div>
           </div>
           <div>
-            <h3 class="text-sm font-semibold text-gray-900 mb-2">Shipping Address</h3>
+            <h3 class="text-sm font-semibold text-gray-900 mb-2">Адрес доставки</h3>
             <div class="text-sm text-gray-600">
               <p>{{ order.shipping_address }}</p>
             </div>
           </div>
           <div>
-            <h3 class="text-sm font-semibold text-gray-900 mb-2">Order Summary</h3>
+            <h3 class="text-sm font-semibold text-gray-900 mb-2">Сводка заказа</h3>
             <div class="text-sm text-gray-600">
-              <p>{{ order.items_count }} items</p>
-              <p>{{ order.total_quantity }} total quantity</p>
+              <p>{{ order.items_count }} товаров</p>
+              <p>{{ order.total_quantity }} всего единиц</p>
             </div>
           </div>
         </div>
@@ -99,7 +99,7 @@
       <!-- Order Items -->
       <div class="bg-white rounded-lg shadow-sm border border-gray-100">
         <div class="px-6 py-4 border-b border-gray-100">
-          <h2 class="text-lg font-semibold text-gray-900">Order Items</h2>
+          <h2 class="text-lg font-semibold text-gray-900">Товары в заказе</h2>
         </div>
         <div class="divide-y divide-gray-100">
           <div
@@ -133,7 +133,7 @@
           <div class="flex justify-end">
             <div class="text-right">
               <p class="text-base font-semibold text-gray-900">
-                Total: ${{ formatPrice(order.total_amount) }}
+                Итого: ${{ formatPrice(order.total_amount) }}
               </p>
             </div>
           </div>
@@ -147,7 +147,7 @@
           @click="$router.push('/orders')"
           class="border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white"
         >
-          Back to Orders
+          Назад к заказам
         </BaseButton>
 
         <div class="flex space-x-3">
@@ -158,14 +158,14 @@
             :loading="cancelling"
             class="border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white"
           >
-            Cancel Order
+            Отменить заказ
           </BaseButton>
           <BaseButton
             variant="primary"
             @click="reorder"
             class="bg-gray-900 text-white hover:bg-gray-800"
           >
-            Reorder Items
+            Повторить заказ
           </BaseButton>
         </div>
       </div>
@@ -208,7 +208,7 @@ export default {
     }
 
     const formatDate = (dateString) => {
-      return new Date(dateString).toLocaleDateString('en-US', {
+      return new Date(dateString).toLocaleDateString('ru-RU', {
         year: 'numeric',
         month: 'long',
         day: 'numeric',
@@ -238,11 +238,11 @@ export default {
 
     const getStatusText = (status) => {
       const statusMap = {
-        pending: 'Pending',
-        confirmed: 'Confirmed',
-        shipped: 'Shipped',
-        delivered: 'Delivered',
-        cancelled: 'Cancelled'
+        pending: 'Ожидание',
+        confirmed: 'Подтвержден',
+        shipped: 'Отправлен',
+        delivered: 'Доставлен',
+        cancelled: 'Отменен'
       }
       return statusMap[status] || status
     }
@@ -251,7 +251,7 @@ export default {
       return {
         id: item.product_id,
         name: item.product_name,
-        category_name: 'Product',
+        category_name: 'Товар',
         image_url: null
       }
     }
@@ -267,14 +267,14 @@ export default {
         if (response.data) {
           order.value = response.data
         } else {
-          error.value = 'Order not found'
+          error.value = 'Заказ не найден'
         }
       } catch (err) {
-        console.error('Error fetching order:', err)
+        console.error('Ошибка при загрузке заказа:', err)
         if (err.response?.status === 404) {
-          error.value = 'Order not found'
+          error.value = 'Заказ не найден'
         } else {
-          error.value = 'Failed to load order details'
+          error.value = 'Не удалось загрузить детали заказа'
         }
       } finally {
         loading.value = false
@@ -288,10 +288,10 @@ export default {
         await orderService.updateOrderStatus(order.value.id, 'cancelled')
         order.value.status = 'cancelled'
 
-        showSuccess('Order cancelled successfully')
+        showSuccess('Заказ успешно отменен')
       } catch (error) {
-        console.error('Error cancelling order:', error)
-        showError('Failed to cancel order')
+        console.error('Ошибка при отмене заказа:', error)
+        showError('Не удалось отменить заказ')
       } finally {
         cancelling.value = false
       }
@@ -304,11 +304,11 @@ export default {
           await cartStore.addToCart(item.product_id, item.quantity)
         }
 
-        showSuccess('Items added to cart!')
+        showSuccess('Товары добавлены в корзину!')
         router.push('/cart')
       } catch (error) {
-        console.error('Error reordering:', error)
-        showError('Failed to add items to cart')
+        console.error('Ошибка при повторном заказе:', error)
+        showError('Не удалось добавить товары в корзину')
       }
     }
 

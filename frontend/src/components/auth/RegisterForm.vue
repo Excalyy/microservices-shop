@@ -1,18 +1,17 @@
-<!-- frontend/src/components/auth/RegisterForm.vue -->
 <template>
   <div class="bg-white max-w-md mx-auto p-6 rounded-xl shadow-lg border border-gray-200">
     <div class="mb-6">
-      <h2 class="text-2xl font-bold text-black">Create Account</h2>
-      <p class="text-gray-500 mt-2 text-sm">Join MicroShop and start shopping today!</p>
+      <h2 class="text-2xl font-bold text-black">Создание аккаунта</h2>
+      <p class="text-gray-500 mt-2 text-sm">Присоединяйтесь к MicroShop и начните покупать уже сегодня!</p>
     </div>
 
     <form @submit.prevent="handleSubmit" class="space-y-5">
-      <!-- Email Field -->
+      <!-- Поле email -->
       <BaseInput
         v-model="formData.email"
         type="email"
-        label="Email Address"
-        placeholder="Enter your email"
+        label="Email адрес"
+        placeholder="Введите ваш email"
         :error="errors.email"
         :required="true"
       >
@@ -23,12 +22,12 @@
         </template>
       </BaseInput>
 
-      <!-- Username Field -->
+      <!-- Поле имени пользователя -->
       <BaseInput
         v-model="formData.username"
         type="text"
-        label="Username"
-        placeholder="Choose a username"
+        label="Имя пользователя"
+        placeholder="Выберите имя пользователя"
         :error="errors.username"
         :required="true"
       >
@@ -39,12 +38,12 @@
         </template>
       </BaseInput>
 
-      <!-- First Name Field -->
+      <!-- Поле имени -->
       <BaseInput
         v-model="formData.first_name"
         type="text"
-        label="First Name"
-        placeholder="Enter your first name"
+        label="Имя"
+        placeholder="Введите ваше имя"
         :error="errors.first_name"
         :required="true"
       >
@@ -55,12 +54,12 @@
         </template>
       </BaseInput>
 
-      <!-- Last Name Field -->
+      <!-- Поле фамилии -->
       <BaseInput
         v-model="formData.last_name"
         type="text"
-        label="Last Name"
-        placeholder="Enter your last name"
+        label="Фамилия"
+        placeholder="Введите вашу фамилию"
         :error="errors.last_name"
         :required="true"
       >
@@ -71,15 +70,15 @@
         </template>
       </BaseInput>
 
-      <!-- Password Field -->
+      <!-- Поле пароля -->
       <BaseInput
         v-model="formData.password"
         :type="showPassword ? 'text' : 'password'"
-        label="Password"
-        placeholder="Create a password"
+        label="Пароль"
+        placeholder="Создайте пароль"
         :error="errors.password"
         :required="true"
-        help-text="Password must be at least 8 characters long"
+        help-text="Пароль должен содержать не менее 8 символов"
       >
         <template #icon>
           <svg class="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -103,12 +102,12 @@
         </template>
       </BaseInput>
 
-      <!-- Confirm Password Field -->
+      <!-- Поле подтверждения пароля -->
       <BaseInput
         v-model="formData.password_confirm"
         :type="showConfirmPassword ? 'text' : 'password'"
-        label="Confirm Password"
-        placeholder="Confirm your password"
+        label="Подтверждение пароля"
+        placeholder="Подтвердите ваш пароль"
         :error="errors.password_confirm"
         :required="true"
       >
@@ -134,7 +133,7 @@
         </template>
       </BaseInput>
 
-      <!-- Terms and Conditions -->
+      <!-- Условия использования -->
       <div class="flex items-start text-sm">
         <div class="flex items-center h-5">
           <input
@@ -146,21 +145,21 @@
         </div>
         <div class="ml-3">
           <label for="terms" class="text-gray-700">
-            I agree to the
-            <a href="#" class="text-black hover:text-gray-700 font-medium">Terms and Conditions</a>
-            and
-            <a href="#" class="text-black hover:text-gray-700 font-medium">Privacy Policy</a>
+            Я соглашаюсь с
+            <a href="#" class="text-black hover:text-gray-700 font-medium">Условиями использования</a>
+            и
+            <a href="#" class="text-black hover:text-gray-700 font-medium">Политикой конфиденциальности</a>
           </label>
         </div>
       </div>
       <div v-if="errors.agree_terms" class="text-red-600 text-sm">{{ errors.agree_terms }}</div>
 
-      <!-- Error Message -->
+      <!-- Сообщение об ошибке -->
       <div v-if="errors.general" class="p-3 bg-red-50 border border-red-200 rounded-md">
         <p class="text-red-600 text-sm">{{ errors.general }}</p>
       </div>
 
-      <!-- Submit Button -->
+      <!-- Кнопка отправки -->
       <BaseButton
         type="submit"
         variant="primary"
@@ -170,15 +169,15 @@
         block
         class="bg-black text-white hover:bg-gray-800 focus:ring-black"
       >
-        Create Account
+        Создать аккаунт
       </BaseButton>
 
-      <!-- Sign In Link -->
+      <!-- Ссылка на вход -->
       <div class="text-center text-sm">
         <p class="text-gray-600">
-          Already have an account?
+          Уже есть аккаунт?
           <router-link to="/login" class="text-black hover:text-gray-700 font-medium">
-            Sign in here
+            Войдите здесь
           </router-link>
         </p>
       </div>
@@ -235,47 +234,47 @@ export default {
     const validateForm = () => {
       errors.value = {}
 
-      // Email validation
+      // Валидация email
       if (!formData.value.email) {
-        errors.value.email = 'Email is required'
+        errors.value.email = 'Email обязателен для заполнения'
       } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.value.email)) {
-        errors.value.email = 'Please enter a valid email address'
+        errors.value.email = 'Пожалуйста, введите корректный email адрес'
       }
 
-      // Username validation
+      // Валидация имени пользователя
       if (!formData.value.username) {
-        errors.value.username = 'Username is required'
+        errors.value.username = 'Имя пользователя обязательно для заполнения'
       } else if (formData.value.username.length < 3) {
-        errors.value.username = 'Username must be at least 3 characters'
+        errors.value.username = 'Имя пользователя должно содержать минимум 3 символа'
       }
 
-      // First name validation
+      // Валидация имени
       if (!formData.value.first_name) {
-        errors.value.first_name = 'First name is required'
+        errors.value.first_name = 'Имя обязательно для заполнения'
       }
 
-      // Last name validation
+      // Валидация фамилии
       if (!formData.value.last_name) {
-        errors.value.last_name = 'Last name is required'
+        errors.value.last_name = 'Фамилия обязательна для заполнения'
       }
 
-      // Password validation
+      // Валидация пароля
       if (!formData.value.password) {
-        errors.value.password = 'Password is required'
+        errors.value.password = 'Пароль обязателен для заполнения'
       } else if (formData.value.password.length < 8) {
-        errors.value.password = 'Password must be at least 8 characters'
+        errors.value.password = 'Пароль должен содержать минимум 8 символов'
       }
 
-      // Confirm password validation
+      // Валидация подтверждения пароля
       if (!formData.value.password_confirm) {
-        errors.value.password_confirm = 'Please confirm your password'
+        errors.value.password_confirm = 'Пожалуйста, подтвердите ваш пароль'
       } else if (formData.value.password !== formData.value.password_confirm) {
-        errors.value.password_confirm = 'Passwords do not match'
+        errors.value.password_confirm = 'Пароли не совпадают'
       }
 
-      // Terms validation
+      // Валидация условий
       if (!formData.value.agree_terms) {
-        errors.value.agree_terms = 'You must agree to the terms and conditions'
+        errors.value.agree_terms = 'Вы должны согласиться с условиями использования'
       }
 
       return Object.keys(errors.value).length === 0
@@ -298,15 +297,15 @@ export default {
         })
 
         if (result.success) {
-          showSuccess('Account created successfully! Please sign in.')
+          showSuccess('Аккаунт успешно создан! Пожалуйста, войдите.')
           router.push('/login')
         } else {
-          errors.value.general = result.error || 'Registration failed'
+          errors.value.general = result.error || 'Ошибка регистрации'
         }
       } catch (error) {
-        console.error('Registration error:', error)
-        errors.value.general = 'An unexpected error occurred'
-        showError('Registration failed. Please try again.')
+        console.error('Ошибка регистрации:', error)
+        errors.value.general = 'Произошла непредвиденная ошибка'
+        showError('Регистрация не удалась. Пожалуйста, попробуйте снова.')
       } finally {
         loading.value = false
       }

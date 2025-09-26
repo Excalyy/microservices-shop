@@ -9,7 +9,7 @@
             <svg class="w-4 h-4 mr-2 text-gray-600" fill="currentColor" viewBox="0 0 20 20">
               <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path>
             </svg>
-            Home
+            Домой
           </router-link>
         </li>
         <li>
@@ -17,7 +17,7 @@
             <svg class="w-5 h-5 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
               <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path>
             </svg>
-            <router-link to="/catalog" class="ml-2 text-gray-600 hover:text-gray-900 text-sm font-medium">Catalog</router-link>
+            <router-link to="/catalog" class="ml-2 text-gray-600 hover:text-gray-900 text-sm font-medium">Каталог</router-link>
           </div>
         </li>
         <li v-if="product">
@@ -33,7 +33,7 @@
 
     <!-- Loading State -->
     <div v-if="loading" class="flex justify-center py-16">
-      <LoadingSpinner size="lg" text="Loading product..." />
+      <LoadingSpinner size="lg" text="Загрузка товара..." />
     </div>
 
     <!-- Error State -->
@@ -43,11 +43,11 @@
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z" />
         </svg>
       </div>
-      <h3 class="mt-4 text-lg font-semibold text-gray-900">Product not found</h3>
+      <h3 class="mt-4 text-lg font-semibold text-gray-900">Товар не найден</h3>
       <p class="mt-2 text-sm text-gray-500">{{ error }}</p>
       <div class="mt-6">
         <BaseButton variant="primary" @click="$router.push('/catalog')" class="bg-gray-900 text-white hover:bg-gray-800">
-          Back to Catalog
+          Вернуться в каталог
         </BaseButton>
       </div>
     </div>
@@ -81,7 +81,7 @@
         <h1 class="text-2xl font-bold text-gray-900">{{ product.name }}</h1>
 
         <div class="mt-3">
-          <h2 class="sr-only">Product information</h2>
+          <h2 class="sr-only">Информация о товаре</h2>
           <p class="text-2xl font-semibold text-gray-900">${{ formatPrice(product.price) }}</p>
         </div>
 
@@ -102,20 +102,20 @@
               <svg class="w-5 h-5 text-green-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
                 <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
               </svg>
-              <span class="text-green-600 font-semibold">In Stock</span>
-              <span class="text-gray-500 ml-2 text-sm">({{ product.stock_quantity }} available)</span>
+              <span class="text-green-600 font-semibold">В наличии</span>
+              <span class="text-gray-500 ml-2 text-sm">(доступно {{ product.stock_quantity }})</span>
             </div>
             <div v-else class="flex items-center">
               <svg class="w-5 h-5 text-red-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
                 <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd" />
               </svg>
-              <span class="text-red-600 font-semibold">Out of Stock</span>
+              <span class="text-red-600 font-semibold">Нет в наличии</span>
             </div>
           </div>
         </div>
 
         <div class="mt-6">
-          <h3 class="sr-only">Description</h3>
+          <h3 class="sr-only">Описание</h3>
           <div class="text-base text-gray-700 space-y-4">
             <p>{{ product.description }}</p>
           </div>
@@ -125,7 +125,7 @@
           <!-- Quantity -->
           <div class="mt-8">
             <div class="flex items-center justify-between">
-              <h3 class="text-sm font-semibold text-gray-900">Quantity</h3>
+              <h3 class="text-sm font-semibold text-gray-900">Количество</h3>
             </div>
 
             <div class="mt-2">
@@ -175,7 +175,7 @@
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 13m0 0l-2.5 5M7 13l-2.5 5m0 0h10.5" />
                 </svg>
               </template>
-              Add to Cart
+              В корзину
             </BaseButton>
 
             <BaseButton
@@ -195,25 +195,25 @@
 
         <!-- Product details -->
         <section aria-labelledby="details-heading" class="mt-12">
-          <h2 id="details-heading" class="text-lg font-semibold text-gray-900">Additional Details</h2>
+          <h2 id="details-heading" class="text-lg font-semibold text-gray-900">Дополнительная информация</h2>
 
           <div class="mt-4 space-y-6">
             <div class="border-t border-gray-100 pt-6">
               <dl class="grid grid-cols-1 gap-x-4 gap-y-6 sm:grid-cols-2">
                 <div>
-                  <dt class="text-sm font-semibold text-gray-500">Category</dt>
+                  <dt class="text-sm font-semibold text-gray-500">Категория</dt>
                   <dd class="mt-1 text-sm text-gray-900">{{ product.category_name }}</dd>
                 </div>
                 <div>
-                  <dt class="text-sm font-semibold text-gray-500">Stock</dt>
-                  <dd class="mt-1 text-sm text-gray-900">{{ product.stock_quantity }} units</dd>
+                  <dt class="text-sm font-semibold text-gray-500">На складе</dt>
+                  <dd class="mt-1 text-sm text-gray-900">{{ product.stock_quantity }} единиц</dd>
                 </div>
                 <div>
-                  <dt class="text-sm font-semibold text-gray-500">Status</dt>
-                  <dd class="mt-1 text-sm text-gray-900">{{ product.is_active ? 'Active' : 'Inactive' }}</dd>
+                  <dt class="text-sm font-semibold text-gray-500">Статус</dt>
+                  <dd class="mt-1 text-sm text-gray-900">{{ product.is_active ? 'Активен' : 'Неактивен' }}</dd>
                 </div>
                 <div>
-                  <dt class="text-sm font-semibold text-gray-500">Added</dt>
+                  <dt class="text-sm font-semibold text-gray-500">Добавлен</dt>
                   <dd class="mt-1 text-sm text-gray-900">{{ formatDate(product.created_at) }}</dd>
                 </div>
               </dl>
@@ -265,7 +265,7 @@ export default {
     }
 
     const formatDate = (dateString) => {
-      return new Date(dateString).toLocaleDateString()
+      return new Date(dateString).toLocaleDateString('ru-RU')
     }
 
     const handleImageError = (event) => {
@@ -286,7 +286,7 @@ export default {
 
     const handleAddToCart = async () => {
       if (!product.value.is_in_stock) {
-        showError('Product is out of stock')
+        showError('Товара нет в наличии')
         return
       }
 
@@ -295,13 +295,13 @@ export default {
         const result = await cartStore.addToCart(product.value.id, quantity.value)
 
         if (result.success) {
-          showSuccess(`${quantity.value}x ${product.value.name} added to cart!`)
+          showSuccess(`${quantity.value}x ${product.value.name} добавлен в корзину!`)
         } else {
-          showError(result.error || 'Failed to add product to cart')
+          showError(result.error || 'Не удалось добавить товар в корзину')
         }
       } catch (error) {
-        console.error('Error adding to cart:', error)
-        showError('Failed to add product to cart')
+        console.error('Ошибка при добавлении в корзину:', error)
+        showError('Не удалось добавить товар в корзину')
       } finally {
         addingToCart.value = false
       }
@@ -310,8 +310,8 @@ export default {
     const toggleWishlist = () => {
       isInWishlist.value = !isInWishlist.value
       const message = isInWishlist.value
-        ? `${product.value.name} added to wishlist!`
-        : `${product.value.name} removed from wishlist!`
+        ? `${product.value.name} добавлен в избранное!`
+        : `${product.value.name} удален из избранного!`
       showSuccess(message)
     }
 
@@ -324,11 +324,11 @@ export default {
         const result = await productsStore.fetchProduct(productId)
 
         if (!result.success) {
-          error.value = result.error || 'Product not found'
+          error.value = result.error || 'Товар не найден'
         }
       } catch (err) {
-        console.error('Error fetching product:', err)
-        error.value = 'Failed to load product'
+        console.error('Ошибка при загрузке товара:', err)
+        error.value = 'Не удалось загрузить товар'
       } finally {
         loading.value = false
       }

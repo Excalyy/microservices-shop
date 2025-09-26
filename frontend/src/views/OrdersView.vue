@@ -3,13 +3,13 @@
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
     <!-- Header -->
     <div class="mb-8">
-      <h1 class="text-3xl font-bold text-gray-900">My Orders</h1>
-      <p class="mt-2 text-sm text-gray-500">Track and manage your orders</p>
+      <h1 class="text-3xl font-bold text-gray-900">Мои заказы</h1>
+      <p class="mt-2 text-sm text-gray-500">Отслеживайте и управляйте своими заказами</p>
     </div>
 
     <!-- Loading State -->
     <div v-if="loading" class="flex justify-center py-16">
-      <LoadingSpinner size="lg" text="Loading orders..." />
+      <LoadingSpinner size="lg" text="Загрузка заказов..." />
     </div>
 
     <!-- Empty State -->
@@ -17,11 +17,11 @@
       <svg class="mx-auto h-12 w-12 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
       </svg>
-      <h3 class="mt-4 text-lg font-semibold text-gray-900">No orders yet</h3>
-      <p class="mt-2 text-sm text-gray-500">Start shopping to see your orders here.</p>
+      <h3 class="mt-4 text-lg font-semibold text-gray-900">Заказов пока нет</h3>
+      <p class="mt-2 text-sm text-gray-500">Начните покупки, чтобы увидеть здесь свои заказы.</p>
       <div class="mt-6">
         <BaseButton variant="primary" @click="$router.push('/catalog')" class="bg-gray-900 text-white hover:bg-gray-800">
-          Start Shopping
+          Начать покупки
         </BaseButton>
       </div>
     </div>
@@ -38,10 +38,10 @@
           <div class="flex items-center justify-between">
             <div>
               <h3 class="text-lg font-semibold text-gray-900">
-                Order #{{ order.id }}
+                Заказ #{{ order.id }}
               </h3>
               <p class="text-sm text-gray-500 mt-1">
-                Placed on {{ formatDate(order.created_at) }}
+                Создан {{ formatDate(order.created_at) }}
               </p>
             </div>
             <div class="text-right">
@@ -57,7 +57,7 @@
 
         <!-- Order Items -->
         <div class="px-6 py-4">
-          <h4 class="text-sm font-semibold text-gray-900 mb-3">Items ({{ order.items_count }})</h4>
+          <h4 class="text-sm font-semibold text-gray-900 mb-3">Товары ({{ order.items_count }})</h4>
           <div class="space-y-3">
             <div
               v-for="item in order.items"
@@ -76,7 +76,7 @@
                   {{ item.product_name }}
                 </p>
                 <p class="text-sm text-gray-500 mt-1">
-                  Qty: {{ item.quantity }} × ${{ formatPrice(item.price) }}
+                  Кол-во: {{ item.quantity }} × ${{ formatPrice(item.price) }}
                 </p>
               </div>
               <div class="text-sm font-semibold text-gray-900">
@@ -90,7 +90,7 @@
         <div class="px-6 py-4 border-t border-gray-100 bg-gray-50">
           <div class="flex items-center justify-between">
             <div class="text-sm text-gray-500">
-              <p><strong>Shipping Address:</strong></p>
+              <p><strong>Адрес доставки:</strong></p>
               <p>{{ order.shipping_address }}</p>
             </div>
             <div class="flex space-x-3">
@@ -100,7 +100,7 @@
                 @click="viewOrderDetails(order.id)"
                 class="border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white"
               >
-                View Details
+                Детали
               </BaseButton>
               <BaseButton
                 v-if="order.status === 'pending'"
@@ -109,7 +109,7 @@
                 @click="cancelOrder(order.id)"
                 class="text-gray-600 hover:text-gray-900"
               >
-                Cancel Order
+                Отменить
               </BaseButton>
             </div>
           </div>
@@ -127,7 +127,7 @@
           @click="changePage(currentPage - 1)"
           class="border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white"
         >
-          Previous
+          Назад
         </BaseButton>
 
         <div class="flex items-center space-x-1">
@@ -153,7 +153,7 @@
           @click="changePage(currentPage + 1)"
           class="border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white"
         >
-          Next
+          Вперед
         </BaseButton>
       </div>
     </div>
@@ -192,7 +192,7 @@ export default {
     }
 
     const formatDate = (dateString) => {
-      return new Date(dateString).toLocaleDateString('en-US', {
+      return new Date(dateString).toLocaleDateString('ru-RU', {
         year: 'numeric',
         month: 'long',
         day: 'numeric',
@@ -222,11 +222,11 @@ export default {
 
     const getStatusText = (status) => {
       const statusMap = {
-        pending: 'Pending',
-        confirmed: 'Confirmed',
-        shipped: 'Shipped',
-        delivered: 'Delivered',
-        cancelled: 'Cancelled'
+        pending: 'Ожидание',
+        confirmed: 'Подтвержден',
+        shipped: 'Отправлен',
+        delivered: 'Доставлен',
+        cancelled: 'Отменен'
       }
       return statusMap[status] || status
     }
@@ -235,8 +235,8 @@ export default {
       return {
         id: item.product_id,
         name: item.product_name,
-        category_name: 'Product', // Default category for orders
-        image_url: null // Will use icon fallback
+        category_name: 'Товар', // Категория по умолчанию для заказов
+        image_url: null // Будет использована иконка по умолчанию
       }
     }
 
@@ -251,14 +251,14 @@ export default {
         if (response.data) {
           orders.value = response.data.results || response.data
 
-          // Handle pagination
+          // Обработка пагинации
           if (response.data.count !== undefined) {
             totalPages.value = Math.ceil(response.data.count / 10)
           }
         }
       } catch (error) {
-        console.error('Error fetching orders:', error)
-        showError('Failed to load orders')
+        console.error('Ошибка при загрузке заказов:', error)
+        showError('Не удалось загрузить заказы')
       } finally {
         loading.value = false
       }
@@ -314,11 +314,11 @@ export default {
     const cancelOrder = async (orderId) => {
       try {
         await orderService.updateOrderStatus(orderId, 'cancelled')
-        showSuccess('Order cancelled successfully')
+        showSuccess('Заказ успешно отменен')
         await fetchOrders(currentPage.value)
       } catch (error) {
-        console.error('Error cancelling order:', error)
-        showError('Failed to cancel order')
+        console.error('Ошибка при отмене заказа:', error)
+        showError('Не удалось отменить заказ')
       }
     }
 

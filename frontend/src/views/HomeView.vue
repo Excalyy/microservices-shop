@@ -6,11 +6,11 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center">
           <h1 class="text-5xl md:text-6xl font-extrabold text-gray-900 mb-6">
-            Welcome to MicroShop
+            Добро пожаловать в MicroShop
           </h1>
           <p class="text-xl md:text-2xl mb-8 text-gray-600 max-w-3xl mx-auto">
-            Discover amazing products with our modern microservices-powered shopping experience.
-            Fast, secure, and reliable.
+            Откройте для себя удивительные товары с нашим современным покупательским опытом на основе микросервисов.
+            Быстро, безопасно и надежно.
           </p>
           <div class="flex flex-col sm:flex-row gap-4 justify-center">
             <BaseButton
@@ -18,14 +18,14 @@
               size="lg"
               @click="$router.push('/catalog')"
             >
-              Shop Now
+              Начать покупки
             </BaseButton>
             <BaseButton
               variant="outline"
               size="lg"
               @click="$router.push('/register')"
             >
-              Create Account
+              Создать аккаунт
             </BaseButton>
           </div>
         </div>
@@ -36,9 +36,9 @@
     <section class="py-16 bg-gray-50">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12">
-          <h2 class="text-4xl font-extrabold text-gray-900 mb-4">Why Choose MicroShop?</h2>
+          <h2 class="text-4xl font-extrabold text-gray-900 mb-4">Почему выбирают MicroShop?</h2>
           <p class="text-gray-600 text-lg max-w-2xl mx-auto">
-            Built with modern microservices architecture for the best shopping experience
+            Построено на современной микросервисной архитектуре для лучшего покупательского опыта
           </p>
         </div>
 
@@ -49,8 +49,8 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
               </svg>
             </div>
-            <h3 class="text-xl font-semibold text-gray-900 mb-2">Lightning Fast</h3>
-            <p class="text-gray-600">Optimized performance with microservices architecture for instant loading</p>
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">Шустрая работа</h3>
+            <p class="text-gray-600">Оптимизированная производительность с микросервисной архитектурой для мгновенной загрузки</p>
           </div>
 
           <div class="text-center">
@@ -59,8 +59,8 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
               </svg>
             </div>
-            <h3 class="text-xl font-semibold text-gray-900 mb-2">Secure & Reliable</h3>
-            <p class="text-gray-600">Enterprise-grade security with reliable distributed systems</p>
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">Безопасность и надежность</h3>
+            <p class="text-gray-600">Корпоративная безопасность с надежными распределенными системами</p>
           </div>
 
           <div class="text-center">
@@ -69,8 +69,8 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
               </svg>
             </div>
-            <h3 class="text-xl font-semibold text-gray-900 mb-2">User Friendly</h3>
-            <p class="text-gray-600">Intuitive design and smooth user experience across all devices</p>
+            <h3 class="text-xl font-semibold text-gray-900 mb-2">Удобно для пользователя</h3>
+            <p class="text-gray-600">Интуитивный дизайн и плавный пользовательский опыт на всех устройствах</p>
           </div>
         </div>
       </div>
@@ -81,20 +81,20 @@
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between mb-12">
           <div>
-            <h2 class="text-4xl font-extrabold text-gray-900 mb-3">Featured Products</h2>
-            <p class="text-gray-600 text-lg">Discover our most popular items</p>
+            <h2 class="text-4xl font-extrabold text-gray-900 mb-3">Рекомендуемые товары</h2>
+            <p class="text-gray-600 text-lg">Откройте для себя наши самые популярные товары</p>
           </div>
           <BaseButton
             variant="outline"
             @click="$router.push('/catalog')"
           >
-            View All Products
+            Все товары
           </BaseButton>
         </div>
 
         <!-- Loading State -->
         <div v-if="productsLoading" class="flex justify-center py-16">
-          <LoadingSpinner size="lg" text="Loading products..." />
+          <LoadingSpinner size="lg" text="Загрузка товаров..." />
         </div>
 
         <!-- Products Grid -->
@@ -109,7 +109,7 @@
 
         <!-- Empty State -->
         <div v-if="!productsLoading && featuredProducts.length === 0" class="text-center py-16 bg-white rounded-xl shadow-sm">
-          <p class="text-gray-600 text-lg">No featured products available at the moment.</p>
+          <p class="text-gray-600 text-lg">В данный момент нет рекомендуемых товаров.</p>
         </div>
       </div>
     </section>
@@ -117,9 +117,9 @@
     <!-- CTA Section -->
     <section class="py-16 bg-gray-50 text-gray-900">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 class="text-4xl font-extrabold text-gray-900 mb-4">Ready to Start Shopping?</h2>
+        <h2 class="text-4xl font-extrabold text-gray-900 mb-4">Готовы начать покупки?</h2>
         <p class="text-gray-600 text-lg mb-8 max-w-2xl mx-auto">
-          Join thousands of satisfied customers who trust MicroShop for their online shopping needs.
+          Присоединяйтесь к тысячам довольных клиентов, которые доверяют MicroShop свои онлайн-покупки.
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
           <BaseButton
@@ -127,14 +127,14 @@
             size="lg"
             @click="$router.push('/register')"
           >
-            Create Free Account
+            Создать бесплатный аккаунт
           </BaseButton>
           <BaseButton
             variant="outline"
             size="lg"
             @click="$router.push('/catalog')"
           >
-            Browse Products
+            Смотреть товары
           </BaseButton>
         </div>
       </div>
@@ -182,8 +182,8 @@ export default {
           featuredProducts.value = productsStore.products.slice(0, 4)
         }
       } catch (error) {
-        console.error('Error fetching featured products:', error)
-        showToast('Failed to load featured products', 'error')
+        console.error('Ошибка при загрузке рекомендуемых товаров:', error)
+        showToast('Не удалось загрузить рекомендуемые товары', 'error')
       } finally {
         productsLoading.value = false
       }
@@ -192,20 +192,20 @@ export default {
     const handleAddToCart = async (product) => {
       try {
         if (!authStore.isAuthenticated) {
-          showToast('Please sign in to add items to cart', 'error')
+          showToast('Пожалуйста, войдите в систему, чтобы добавлять товары в корзину', 'error')
           router.push('/login')
           return
         }
 
         const result = await cartStore.addToCart(product.id, 1)
         if (result.success) {
-          showToast(`${product.name} added to cart!`, 'success')
+          showToast(`${product.name} добавлен в корзину!`, 'success')
         } else {
-          showToast(result.error || 'Failed to add product to cart', 'error')
+          showToast(result.error || 'Не удалось добавить товар в корзину', 'error')
         }
       } catch (error) {
-        console.error('Error adding to cart:', error)
-        showToast('Failed to add product to cart', 'error')
+        console.error('Ошибка при добавлении в корзину:', error)
+        showToast('Не удалось добавить товар в корзину', 'error')
       }
     }
 

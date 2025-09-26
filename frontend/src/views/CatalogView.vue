@@ -4,12 +4,12 @@
     <!-- Header -->
     <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between mb-10">
       <div>
-        <h1 class="text-4xl font-extrabold text-gray-900 mb-3">Product Catalog</h1>
-        <p class="text-gray-600 text-lg">Discover our amazing collection of products</p>
+        <h1 class="text-4xl font-extrabold text-gray-900 mb-3">Каталог товаров</h1>
+        <p class="text-gray-600 text-lg">Откройте для себя нашу удивительную коллекцию товаров</p>
       </div>
       <div class="mt-4 lg:mt-0">
         <p class="text-sm text-gray-500">
-          Showing {{ startItem }}-{{ endItem }} of {{ totalProducts }} products
+          Показано {{ startItem }}-{{ endItem }} из {{ totalProducts }} товаров
         </p>
       </div>
     </div>
@@ -18,15 +18,15 @@
       <!-- Filters Sidebar -->
       <div class="lg:col-span-1">
         <div class="bg-white rounded-xl shadow-sm border border-gray-100 p-6 sticky top-8">
-          <h3 class="text-xl font-semibold text-gray-900 mb-4">Filters</h3>
+          <h3 class="text-xl font-semibold text-gray-900 mb-4">Фильтры</h3>
 
           <!-- Search -->
           <div class="mb-6">
-            <label class="block text-sm font-medium text-gray-700 mb-2">Search</label>
+            <label class="block text-sm font-medium text-gray-700 mb-2">Поиск</label>
             <input
               v-model="searchQuery"
               type="text"
-              placeholder="Search products..."
+              placeholder="Поиск товаров..."
               class="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-black text-sm"
               @keyup.enter="applyFilters"
             >
@@ -34,13 +34,13 @@
 
           <!-- Categories -->
           <div class="mb-6">
-            <label class="block text-sm font-medium text-gray-700 mb-2">Category</label>
+            <label class="block text-sm font-medium text-gray-700 mb-2">Категория</label>
             <select
               v-model="selectedCategory"
               class="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-black text-sm"
               @change="applyFilters"
             >
-              <option value="">All Categories</option>
+              <option value="">Все категории</option>
               <option v-for="category in categories" :key="category.id" :value="category.id">
                 {{ category.name }} ({{ category.products_count }})
               </option>
@@ -49,19 +49,19 @@
 
           <!-- Price Range -->
           <div class="mb-6">
-            <label class="block text-sm font-medium text-gray-700 mb-2">Price Range</label>
+            <label class="block text-sm font-medium text-gray-700 mb-2">Диапазон цен</label>
             <div class="grid grid-cols-2 gap-2">
               <input
                 v-model="priceRange.min"
                 type="number"
-                placeholder="Min"
+                placeholder="Мин"
                 class="px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-black text-sm"
                 @blur="applyFilters"
               >
               <input
                 v-model="priceRange.max"
                 type="number"
-                placeholder="Max"
+                placeholder="Макс"
                 class="px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-black text-sm"
                 @blur="applyFilters"
               >
@@ -77,24 +77,24 @@
                 class="rounded border-gray-200 text-black focus:ring-black focus:ring-offset-0"
                 @change="applyFilters"
               >
-              <span class="ml-2 text-sm text-gray-700">In stock only</span>
+              <span class="ml-2 text-sm text-gray-700">Только в наличии</span>
             </label>
           </div>
 
           <!-- Sort By -->
           <div class="mb-6">
-            <label class="block text-sm font-medium text-gray-700 mb-2">Sort By</label>
+            <label class="block text-sm font-medium text-gray-700 mb-2">Сортировка</label>
             <select
               v-model="sortBy"
               class="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-black text-sm"
               @change="applyFilters"
             >
-              <option value="-created_at">Newest First</option>
-              <option value="created_at">Oldest First</option>
-              <option value="name">Name A-Z</option>
-              <option value="-name">Name Z-A</option>
-              <option value="price">Price Low to High</option>
-              <option value="-price">Price High to Low</option>
+              <option value="-created_at">Сначала новые</option>
+              <option value="created_at">Сначала старые</option>
+              <option value="name">Название А-Я</option>
+              <option value="-name">Название Я-А</option>
+              <option value="price">Цена по возрастанию</option>
+              <option value="-price">Цена по убыванию</option>
             </select>
           </div>
 
@@ -105,7 +105,7 @@
             block
             @click="clearFilters"
           >
-            Clear Filters
+            Сбросить фильтры
           </BaseButton>
         </div>
       </div>
@@ -114,7 +114,7 @@
       <div class="lg:col-span-3 mt-8 lg:mt-0">
         <!-- Loading State -->
         <div v-if="loading" class="flex justify-center py-16">
-          <LoadingSpinner size="lg" text="Loading products..." />
+          <LoadingSpinner size="lg" text="Загрузка товаров..." />
         </div>
 
         <!-- Products Grid -->
@@ -132,11 +132,11 @@
           <svg class="mx-auto h-16 w-16 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
           </svg>
-          <h3 class="mt-3 text-xl font-semibold text-gray-900">No products found</h3>
-          <p class="mt-2 text-sm text-gray-500">Try adjusting your search or filter criteria.</p>
+          <h3 class="mt-3 text-xl font-semibold text-gray-900">Товары не найдены</h3>
+          <p class="mt-2 text-sm text-gray-500">Попробуйте изменить параметры поиска или фильтры.</p>
           <div class="mt-6">
             <BaseButton variant="primary" @click="clearFilters">
-              Clear Filters
+              Сбросить фильтры
             </BaseButton>
           </div>
         </div>
@@ -145,13 +145,13 @@
         <div v-if="totalPages > 1" class="mt-8 flex items-center justify-between">
           <div class="flex items-center">
             <p class="text-sm text-gray-600">
-              Showing
+              Показано
               <span class="font-medium">{{ startItem }}</span>
-              to
+              до
               <span class="font-medium">{{ endItem }}</span>
-              of
+              из
               <span class="font-medium">{{ totalProducts }}</span>
-              results
+              результатов
             </p>
           </div>
 
@@ -162,7 +162,7 @@
               :disabled="currentPage === 1"
               @click="changePage(currentPage - 1)"
             >
-              Previous
+              Назад
             </BaseButton>
 
             <div class="flex items-center space-x-1">
@@ -187,7 +187,7 @@
               :disabled="currentPage === totalPages"
               @click="changePage(currentPage + 1)"
             >
-              Next
+              Вперед
             </BaseButton>
           </div>
         </div>
@@ -325,11 +325,11 @@ export default {
 
         const result = await productsStore.fetchProducts(params)
         if (!result.success) {
-          showError('Failed to load products')
+          showError('Не удалось загрузить товары')
         }
       } catch (error) {
-        console.error('Error fetching products:', error)
-        showError('Failed to load products')
+        console.error('Ошибка при загрузке товаров:', error)
+        showError('Не удалось загрузить товары')
       } finally {
         loading.value = false
       }
@@ -366,20 +366,20 @@ export default {
     const handleAddToCart = async (product) => {
       try {
         if (!authStore.isAuthenticated) {
-          showError('Please sign in to add items to cart')
+          showError('Пожалуйста, войдите в систему, чтобы добавлять товары в корзину')
           router.push('/login')
           return
         }
 
         const result = await cartStore.addToCart(product.id, 1)
         if (result.success) {
-          showSuccess(`${product.name} added to cart!`)
+          showSuccess(`${product.name} добавлен в корзину!`)
         } else {
-          showError(result.error || 'Failed to add product to cart')
+          showError(result.error || 'Не удалось добавить товар в корзину')
         }
       } catch (error) {
-        console.error('Error adding to cart:', error)
-        showError('Failed to add product to cart')
+        console.error('Ошибка при добавлении в корзину:', error)
+        showError('Не удалось добавить товар в корзину')
       }
     }
 

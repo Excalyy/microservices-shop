@@ -1,17 +1,17 @@
 <template>
   <div class="bg-white max-w-md mx-auto p-6 rounded-xl shadow-lg border border-gray-200">
     <div class="mb-6">
-      <h2 class="text-2xl font-bold text-black">Sign In</h2>
-      <p class="text-gray-500 mt-2 text-sm">Welcome back! Please sign in to your account.</p>
+      <h2 class="text-2xl font-bold text-black">Вход в аккаунт</h2>
+      <p class="text-gray-500 mt-2 text-sm">С возвращением! Пожалуйста, войдите в свой аккаунт.</p>
     </div>
 
     <form @submit.prevent="handleSubmit" class="space-y-5">
-      <!-- Email Field -->
+      <!-- Поле email -->
       <BaseInput
         v-model="formData.email"
         type="email"
-        label="Email Address"
-        placeholder="Enter your email"
+        label="Email адрес"
+        placeholder="Введите ваш email"
         :error="errors.email"
         :required="true"
       >
@@ -22,12 +22,12 @@
         </template>
       </BaseInput>
 
-      <!-- Password Field -->
+      <!-- Поле пароля -->
       <BaseInput
         v-model="formData.password"
         :type="showPassword ? 'text' : 'password'"
-        label="Password"
-        placeholder="Enter your password"
+        label="Пароль"
+        placeholder="Введите ваш пароль"
         :error="errors.password"
         :required="true"
       >
@@ -53,7 +53,7 @@
         </template>
       </BaseInput>
 
-      <!-- Remember Me & Forgot Password -->
+      <!-- Запомнить меня и Забыли пароль -->
       <div class="flex items-center justify-between text-sm">
         <label class="flex items-center">
           <input
@@ -61,20 +61,20 @@
             type="checkbox"
             class="h-4 w-4 text-black focus:ring-black border-gray-300 rounded"
           >
-          <span class="ml-2 text-gray-600">Remember me</span>
+          <span class="ml-2 text-gray-600">Запомнить меня</span>
         </label>
 
         <a href="#" class="text-black hover:text-gray-700 font-medium">
-          Forgot password?
+          Забыли пароль?
         </a>
       </div>
 
-      <!-- Error Message -->
+      <!-- Сообщение об ошибке -->
       <div v-if="errors.general" class="p-3 bg-red-50 border border-red-200 rounded-md">
         <p class="text-red-600 text-sm">{{ errors.general }}</p>
       </div>
 
-      <!-- Submit Button -->
+      <!-- Кнопка отправки -->
       <BaseButton
         type="submit"
         variant="primary"
@@ -84,15 +84,15 @@
         block
         class="bg-black text-white hover:bg-gray-800 focus:ring-black"
       >
-        Sign In
+        Войти
       </BaseButton>
 
-      <!-- Sign Up Link -->
+      <!-- Ссылка на регистрацию -->
       <div class="text-center text-sm">
         <p class="text-gray-600">
-          Don't have an account?
+          Нет аккаунта?
           <router-link to="/register" class="text-black hover:text-gray-700 font-medium">
-            Sign up here
+            Зарегистрируйтесь здесь
           </router-link>
         </p>
       </div>
@@ -135,15 +135,15 @@ export default {
       errors.value = {}
 
       if (!formData.value.email) {
-        errors.value.email = 'Email is required'
+        errors.value.email = 'Email обязателен для заполнения'
       } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.value.email)) {
-        errors.value.email = 'Please enter a valid email address'
+        errors.value.email = 'Пожалуйста, введите корректный email адрес'
       }
 
       if (!formData.value.password) {
-        errors.value.password = 'Password is required'
+        errors.value.password = 'Пароль обязателен для заполнения'
       } else if (formData.value.password.length < 6) {
-        errors.value.password = 'Password must be at least 6 characters'
+        errors.value.password = 'Пароль должен содержать минимум 6 символов'
       }
 
       return Object.keys(errors.value).length === 0
@@ -162,14 +162,14 @@ export default {
         })
 
         if (result.success) {
-          // Redirect to intended page or home
+          // Перенаправление на целевую страницу или на главную
           const redirect = router.currentRoute.value.query.redirect || '/'
           router.push(redirect)
         } else {
-          errors.value.general = result.error || 'Login failed'
+          errors.value.general = result.error || 'Ошибка входа'
         }
       } catch (error) {
-        errors.value.general = 'An unexpected error occurred'
+        errors.value.general = 'Произошла непредвиденная ошибка'
       } finally {
         loading.value = false
       }

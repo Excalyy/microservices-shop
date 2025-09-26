@@ -2,7 +2,7 @@
   <footer class="bg-white text-black border-t border-gray-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
-        <!-- Company Info -->
+        <!-- Информация о компании -->
         <div class="col-span-1">
           <div class="flex items-center space-x-2 mb-4">
             <div class="w-8 h-8 bg-black rounded-lg flex items-center justify-center">
@@ -11,68 +11,68 @@
             <span class="text-xl font-bold text-black">MicroShop</span>
           </div>
           <p class="text-gray-500 text-sm leading-relaxed">
-            Your trusted online marketplace built with modern microservices architecture.
-            Fast, reliable, and secure shopping experience.
+            Ваш надежный онлайн-магазин, созданный на основе современной микросервисной архитектуры.
+            Быстрый, надежный и безопасный опыт покупок.
           </p>
         </div>
 
-        <!-- Quick Links -->
+        <!-- Быстрые ссылки -->
         <div class="col-span-1">
-          <h3 class="text-lg font-semibold text-black mb-4">Quick Links</h3>
+          <h3 class="text-lg font-semibold text-black mb-4">Быстрые ссылки</h3>
           <ul class="space-y-2">
             <li>
               <router-link to="/" class="text-gray-600 hover:text-black text-sm transition-colors">
-                Home
+                Главная
               </router-link>
             </li>
             <li>
               <router-link to="/catalog" class="text-gray-600 hover:text-black text-sm transition-colors">
-                Catalog
+                Каталог
               </router-link>
             </li>
             <li>
               <router-link to="/cart" class="text-gray-600 hover:text-black text-sm transition-colors">
-                Shopping Cart
+                Корзина
               </router-link>
             </li>
             <li>
               <router-link to="/profile" class="text-gray-600 hover:text-black text-sm transition-colors">
-                My Account
+                Мой аккаунт
               </router-link>
             </li>
           </ul>
         </div>
 
-        <!-- Categories -->
+        <!-- Категории -->
         <div class="col-span-1">
-          <h3 class="text-lg font-semibold text-black mb-4">Categories</h3>
+          <h3 class="text-lg font-semibold text-black mb-4">Категории</h3>
           <ul class="space-y-2">
             <li>
               <a href="#" class="text-gray-600 hover:text-black text-sm transition-colors">
-                Electronics
+                Телевизоры
               </a>
             </li>
             <li>
               <a href="#" class="text-gray-600 hover:text-black text-sm transition-colors">
-                Books
+                Смартфоны
               </a>
             </li>
             <li>
               <a href="#" class="text-gray-600 hover:text-black text-sm transition-colors">
-                Clothing
+                Ноутбуки
               </a>
             </li>
             <li>
               <a href="#" class="text-gray-600 hover:text-black text-sm transition-colors">
-                Home & Garden
+                Роутеры
               </a>
             </li>
           </ul>
         </div>
 
-        <!-- Contact Info -->
+        <!-- Контактная информация -->
         <div class="col-span-1">
-          <h3 class="text-lg font-semibold text-black mb-4">Contact</h3>
+          <h3 class="text-lg font-semibold text-black mb-4">Контакты</h3>
           <ul class="space-y-2 text-sm text-gray-600">
             <li class="flex items-center space-x-2">
               <svg class="h-4 w-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -91,27 +91,27 @@
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
               </svg>
-              <span>123 Commerce St, City, State 12345</span>
+              <span>ул. Торговая, 123, Город, Область 12345</span>
             </li>
           </ul>
         </div>
       </div>
 
-      <!-- Bottom Bar -->
+      <!-- Нижняя панель -->
       <div class="border-t border-gray-200 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
         <div class="text-sm text-gray-500">
-          © {{ currentYear }} MicroShop. All rights reserved.
+          © {{ currentYear }} MicroShop. Все права защищены.
         </div>
 
         <div class="flex items-center space-x-6 mt-4 md:mt-0">
           <a href="#" class="text-sm text-gray-600 hover:text-black transition-colors">
-            Privacy Policy
+            Политика конфиденциальности
           </a>
           <a href="#" class="text-sm text-gray-600 hover:text-black transition-colors">
-            Terms of Service
+            Условия использования
           </a>
           <a href="#" class="text-sm text-gray-600 hover:text-black transition-colors">
-            Cookie Policy
+            Политика cookies
           </a>
         </div>
       </div>

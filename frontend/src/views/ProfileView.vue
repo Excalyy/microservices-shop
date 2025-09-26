@@ -3,8 +3,8 @@
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
     <!-- Header -->
     <div class="mb-8">
-      <h1 class="text-3xl font-bold text-gray-900">My Profile</h1>
-      <p class="mt-2 text-sm text-gray-500">Manage your account settings and view your order history</p>
+      <h1 class="text-3xl font-bold text-gray-900">Мой профиль</h1>
+      <p class="mt-2 text-sm text-gray-500">Управляйте настройками своей учетной записи и просматривайте историю заказов</p>
     </div>
 
     <div class="lg:grid lg:grid-cols-3 lg:gap-8">
@@ -35,19 +35,19 @@
         <!-- Profile Information Tab -->
         <div v-if="activeTab === 'profile'" class="space-y-6">
           <div class="bg-white rounded-lg shadow-sm border border-gray-100 p-6">
-            <h2 class="text-lg font-semibold text-gray-900 mb-6">Personal Information</h2>
+            <h2 class="text-lg font-semibold text-gray-900 mb-6">Личная информация</h2>
 
             <form @submit.prevent="updateProfile" class="space-y-6">
               <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <BaseInput
                   v-model="profileForm.first_name"
-                  label="First Name"
+                  label="Имя"
                   :error="profileErrors.first_name"
                   required
                 />
                 <BaseInput
                   v-model="profileForm.last_name"
-                  label="Last Name"
+                  label="Фамилия"
                   :error="profileErrors.last_name"
                   required
                 />
@@ -56,36 +56,37 @@
               <BaseInput
                 v-model="profileForm.email"
                 type="email"
-                label="Email Address"
+                label="Email адрес"
                 :error="profileErrors.email"
                 required
                 readonly
-                help-text="Email cannot be changed"
+                help-text="Email не может быть изменён"
               />
 
               <BaseInput
                 v-model="profileForm.username"
-                label="Username"
+                label="ID"
                 :error="profileErrors.username"
                 required
                 readonly
-                help-text="Username cannot be changed"
+                help-text="ID не может быть изменено"
               />
 
               <BaseInput
                 v-model="profileForm.phone"
                 type="tel"
-                label="Phone Number"
+                label="Номер телефона"
+                placeholder="+7 (***) *** ** **"
                 :error="profileErrors.phone"
               />
 
               <div>
-                <label class="block text-sm font-semibold text-gray-900">Address</label>
+                <label class="block text-sm font-semibold text-gray-900">Адрес</label>
                 <textarea
                   v-model="profileForm.address"
                   rows="3"
                   class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-gray-900 focus:ring-gray-900"
-                  placeholder="Enter your address"
+                  placeholder="Введите ваш адрес"
                 ></textarea>
                 <p v-if="profileErrors.address" class="mt-1 text-sm text-red-600">{{ profileErrors.address }}</p>
               </div>
@@ -93,7 +94,7 @@
               <BaseInput
                 v-model="profileForm.date_of_birth"
                 type="date"
-                label="Date of Birth"
+                label="Дата рождения"
                 :error="profileErrors.date_of_birth"
               />
 
@@ -104,7 +105,7 @@
                   :loading="updatingProfile"
                   class="bg-gray-900 text-white hover:bg-gray-800"
                 >
-                  Update Profile
+                  Обновить профиль
                 </BaseButton>
               </div>
             </form>
@@ -115,12 +116,12 @@
         <div v-if="activeTab === 'orders'" class="space-y-6">
           <div class="bg-white rounded-lg shadow-sm border border-gray-100">
             <div class="px-6 py-4 border-b border-gray-100">
-              <h2 class="text-lg font-semibold text-gray-900">Order History</h2>
+              <h2 class="text-lg font-semibold text-gray-900">История заказов</h2>
             </div>
 
             <!-- Loading State -->
             <div v-if="loadingOrders" class="p-6 text-center">
-              <LoadingSpinner size="md" text="Loading orders..." />
+              <LoadingSpinner size="md" text="Загрузка истории..." />
             </div>
 
             <!-- Empty State -->
@@ -128,11 +129,11 @@
               <svg class="mx-auto h-12 w-12 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
               </svg>
-              <h3 class="mt-4 text-lg font-semibold text-gray-900">No orders yet</h3>
-              <p class="mt-2 text-sm text-gray-500">Start shopping to see your orders here.</p>
+              <h3 class="mt-4 text-lg font-semibold text-gray-900">У вас еще нет заказов</h3>
+              <p class="mt-2 text-sm text-gray-500">Начните покупки чтобы увидеть историю заказов.</p>
               <div class="mt-6">
                 <BaseButton variant="primary" @click="$router.push('/catalog')" class="bg-gray-900 text-white hover:bg-gray-800">
-                  Start Shopping
+                  Начать покупки
                 </BaseButton>
               </div>
             </div>
@@ -147,10 +148,10 @@
                 <div class="flex items-center justify-between mb-4">
                   <div>
                     <h3 class="text-sm font-semibold text-gray-900">
-                      Order #{{ order.id }}
+                      Заказ #{{ order.id }}
                     </h3>
                     <p class="text-sm text-gray-500 mt-1">
-                      Placed on {{ formatDate(order.created_at) }}
+                      Размещён от {{ formatDate(order.created_at) }}
                     </p>
                   </div>
                   <div class="text-right">
@@ -181,7 +182,7 @@
                         {{ item.product_name }}
                       </p>
                       <p class="text-sm text-gray-500 mt-1">
-                        Qty: {{ item.quantity }} × ${{ formatPrice(item.price) }}
+                        Количество: {{ item.quantity }} × ${{ formatPrice(item.price) }}
                       </p>
                     </div>
                     <div class="text-sm font-semibold text-gray-900">
@@ -197,7 +198,7 @@
                     @click="viewOrder(order.id)"
                     class="border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white"
                   >
-                    View Details
+                    Посмотреть детали
                   </BaseButton>
                 </div>
               </div>
@@ -208,13 +209,13 @@
         <!-- Security Tab -->
         <div v-if="activeTab === 'security'" class="space-y-6">
           <div class="bg-white rounded-lg shadow-sm border border-gray-100 p-6">
-            <h2 class="text-lg font-semibold text-gray-900 mb-6">Change Password</h2>
+            <h2 class="text-lg font-semibold text-gray-900 mb-6">Изменить пароль</h2>
 
             <form @submit.prevent="changePassword" class="space-y-6">
               <BaseInput
                 v-model="passwordForm.current_password"
                 type="password"
-                label="Current Password"
+                label="Текущий пароль"
                 :error="passwordErrors.current_password"
                 required
               />
@@ -222,16 +223,16 @@
               <BaseInput
                 v-model="passwordForm.new_password"
                 type="password"
-                label="New Password"
+                label="Новый пароль"
                 :error="passwordErrors.new_password"
                 required
-                help-text="Password must be at least 8 characters long"
+                help-text="Длина пароля должна быть от 8 символов"
               />
 
               <BaseInput
                 v-model="passwordForm.confirm_password"
                 type="password"
-                label="Confirm New Password"
+                label="Подтвердить новый пароль"
                 :error="passwordErrors.confirm_password"
                 required
               />
@@ -243,7 +244,7 @@
                   :loading="changingPassword"
                   class="bg-gray-900 text-white hover:bg-gray-800"
                 >
-                  Change Password
+                  Сменить пароль
                 </BaseButton>
               </div>
             </form>
@@ -253,12 +254,12 @@
         <!-- Settings Tab -->
         <div v-if="activeTab === 'settings'" class="space-y-6">
           <div class="bg-white rounded-lg shadow-sm border border-gray-100 p-6">
-            <h2 class="text-lg font-semibold text-gray-900 mb-6">Preferences</h2>
+            <h2 class="text-lg font-semibold text-gray-900 mb-6">Предпочтения</h2>
 
             <div class="space-y-6">
               <!-- Email Notifications -->
               <div>
-                <h3 class="text-sm font-semibold text-gray-900 mb-3">Email Notifications</h3>
+                <h3 class="text-sm font-semibold text-gray-900 mb-3">Уведомления на почту</h3>
                 <div class="space-y-3">
                   <label class="flex items-start">
                     <input
@@ -267,8 +268,8 @@
                       class="mt-1 rounded border-gray-300 text-gray-900 focus:ring-gray-900"
                     >
                     <div class="ml-3">
-                      <div class="text-sm font-semibold text-gray-900">Order updates</div>
-                      <div class="text-sm text-gray-500">Get notified about order status changes</div>
+                      <div class="text-sm font-semibold text-gray-900">Обновления заказов</div>
+                      <div class="text-sm text-gray-500">Получайте уведомления об изменении статуса заказа</div>
                     </div>
                   </label>
 
@@ -279,8 +280,8 @@
                       class="mt-1 rounded border-gray-300 text-gray-900 focus:ring-gray-900"
                     >
                     <div class="ml-3">
-                      <div class="text-sm font-semibold text-gray-900">Promotions and offers</div>
-                      <div class="text-sm text-gray-500">Receive promotional emails and special offers</div>
+                      <div class="text-sm font-semibold text-gray-900">Акции и предложения</div>
+                      <div class="text-sm text-gray-500">Получайте рекламные emails и специальные предложения</div>
                     </div>
                   </label>
 
@@ -291,8 +292,8 @@
                       class="mt-1 rounded border-gray-300 text-gray-900 focus:ring-gray-900"
                     >
                     <div class="ml-3">
-                      <div class="text-sm font-semibold text-gray-900">Newsletter</div>
-                      <div class="text-sm text-gray-500">Stay updated with our latest news and products</div>
+                      <div class="text-sm font-semibold text-gray-900">Рассылка</div>
+                      <div class="text-sm text-gray-500">Будьте в курсе наших последних новостей и продуктов</div>
                     </div>
                   </label>
                 </div>
@@ -300,7 +301,7 @@
 
               <!-- Privacy Settings -->
               <div>
-                <h3 class="text-sm font-semibold text-gray-900 mb-3">Privacy</h3>
+                <h3 class="text-sm font-semibold text-gray-900 mb-3">Конфиденциальность</h3>
                 <div class="space-y-3">
                   <label class="flex items-start">
                     <input
@@ -309,8 +310,8 @@
                       class="mt-1 rounded border-gray-300 text-gray-900 focus:ring-gray-900"
                     >
                     <div class="ml-3">
-                      <div class="text-sm font-semibold text-gray-900">Public profile</div>
-                      <div class="text-sm text-gray-500">Make your profile visible to other users</div>
+                      <div class="text-sm font-semibold text-gray-900">Публичный профиль</div>
+                      <div class="text-sm text-gray-500">Сделайте ваш профиль видимым для других пользователей</div>
                     </div>
                   </label>
 
@@ -321,8 +322,8 @@
                       class="mt-1 rounded border-gray-300 text-gray-900 focus:ring-gray-900"
                     >
                     <div class="ml-3">
-                      <div class="text-sm font-semibold text-gray-900">Share data for improvements</div>
-                      <div class="text-sm text-gray-500">Help us improve our services by sharing usage data</div>
+                      <div class="text-sm font-semibold text-gray-900">Поделиться данными для улучшения</div>
+                      <div class="text-sm text-gray-500">Помогите улучшить наши услуги, предоставляя данные об использовании</div>
                     </div>
                   </label>
                 </div>
@@ -335,7 +336,7 @@
                   :loading="savingSettings"
                   class="bg-gray-900 text-white hover:bg-gray-800"
                 >
-                  Save Settings
+                  Сохранить настройки
                 </BaseButton>
               </div>
             </div>
@@ -431,10 +432,10 @@ export default {
 
     // Tab configuration
     const tabs = [
-      { id: 'profile', name: 'Profile', icon: 'UserIcon' },
-      { id: 'orders', name: 'Order History', icon: 'ClipboardIcon' },
-      { id: 'security', name: 'Security', icon: 'LockIcon' },
-      { id: 'settings', name: 'Settings', icon: 'CogIcon' }
+      { id: 'profile', name: 'Профиль', icon: 'UserIcon' },
+      { id: 'orders', name: 'История заказов', icon: 'ClipboardIcon' },
+      { id: 'security', name: 'Безопасность', icon: 'LockIcon' },
+      { id: 'settings', name: 'Настройки', icon: 'CogIcon' }
     ]
 
     // Computed
@@ -585,9 +586,9 @@ export default {
         orders.value = [
           {
             id: 1,
-            created_at: '2024-01-15T10:30:00Z',
+            created_at: '2025-09-15T10:30:00Z',
             total_amount: 299.99,
-            status: 'delivered',
+            status: 'доставлен',
             items: [
               {
                 id: 1,
@@ -600,16 +601,46 @@ export default {
           },
           {
             id: 2,
-            created_at: '2024-01-10T14:20:00Z',
+            created_at: '2025-09-10T14:20:00Z',
             total_amount: 49.99,
-            status: 'shipped',
+            status: 'доставлен',
             items: [
               {
                 id: 2,
-                product_name: 'Python Programming Book',
+                product_name: 'Программируем на python',
                 quantity: 1,
                 price: 49.99,
                 subtotal: 49.99
+              }
+            ]
+          },
+          {
+            id: 3,
+            created_at: '2025-09-15T10:30:00Z',
+            total_amount: 299.99,
+            status: 'доставлен',
+            items: [
+              {
+                id: 1,
+                product_name: 'iPhone 15',
+                quantity: 1,
+                price: 299.99,
+                subtotal: 299.99
+              }
+            ]
+          },
+          {
+            id: 4,
+            created_at: '2025-09-15T10:30:00Z',
+            total_amount: 299.99,
+            status: 'доставлен',
+            items: [
+              {
+                id: 1,
+                product_name: 'iPhone 15',
+                quantity: 1,
+                price: 299.99,
+                subtotal: 299.99
               }
             ]
           }

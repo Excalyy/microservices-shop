@@ -1,9 +1,8 @@
-<!-- frontend/src/components/layout/AppHeader.vue -->
 <template>
   <header class="bg-white border-b border-gray-200 sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">
-        <!-- Logo -->
+        <!-- Логотип -->
         <div class="flex items-center">
           <router-link to="/" class="flex items-center space-x-2">
             <div class="w-8 h-8 bg-black rounded-lg flex items-center justify-center">
@@ -13,32 +12,32 @@
           </router-link>
         </div>
 
-        <!-- Navigation -->
+        <!-- Навигация -->
         <nav class="hidden md:flex items-center space-x-8">
           <router-link
             to="/"
             class="text-gray-600 hover:text-black px-3 py-2 rounded-md text-sm font-medium transition-colors"
             :class="{ 'text-black font-semibold': $route.name === 'home' }"
           >
-            Home
+            Главная
           </router-link>
           <router-link
             to="/catalog"
             class="text-gray-600 hover:text-black px-3 py-2 rounded-md text-sm font-medium transition-colors"
             :class="{ 'text-black font-semibold': $route.name === 'catalog' }"
           >
-            Catalog
+            Каталог
           </router-link>
         </nav>
 
-        <!-- Search Bar -->
+        <!-- Поисковая строка -->
         <div class="flex-1 max-w-lg mx-8 hidden md:block">
           <div class="relative">
             <input
               type="text"
               v-model="searchQuery"
               @keyup.enter="handleSearch"
-              placeholder="Search products..."
+              placeholder="Поиск товаров..."
               class="w-full px-4 py-2 pl-10 pr-4 text-gray-700 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:bg-white focus:border-black focus:ring-2 focus:ring-black transition-all duration-200"
             >
             <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -49,14 +48,14 @@
           </div>
         </div>
 
-        <!-- Right Side Actions -->
+        <!-- Правая часть с действиями -->
         <div class="flex items-center space-x-4">
-          <!-- Debug Info (only in development) -->
+          <!-- Отладочная информация (только в разработке) -->
           <div v-if="isDev" class="text-xs text-gray-500">
-            Auth: {{ isAuthenticated ? 'Yes' : 'No' }} | Token: {{ hasToken ? 'Yes' : 'No' }}
+            Auth: {{ isAuthenticated ? 'Да' : 'Нет' }} | Token: {{ hasToken ? 'Да' : 'Нет' }}
           </div>
 
-          <!-- Cart Icon -->
+          <!-- Иконка корзины -->
           <router-link
             to="/cart"
             class="relative p-2 text-gray-600 hover:text-black transition-colors group"
@@ -72,7 +71,7 @@
             </span>
           </router-link>
 
-          <!-- User Menu -->
+          <!-- Меню пользователя -->
           <div v-if="isAuthenticated" class="relative" ref="userMenu">
             <button
               @click="showUserMenu = !showUserMenu"
@@ -89,7 +88,7 @@
               </svg>
             </button>
 
-            <!-- User Dropdown -->
+            <!-- Выпадающее меню пользователя -->
             <transition name="fade">
               <div v-if="showUserMenu" class="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 py-1">
                 <router-link
@@ -101,7 +100,7 @@
                     <svg class="w-4 h-4 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                     </svg>
-                    Profile
+                    Профиль
                   </div>
                 </router-link>
                 <router-link
@@ -113,7 +112,7 @@
                     <svg class="w-4 h-4 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4m0 0L7 13m0 0l-2.5 5M7 13l-2.5 5m0 0h10.5" />
                     </svg>
-                    My Cart
+                    Моя корзина
                     <span v-if="cartItemsCount > 0" class="ml-auto bg-black text-white text-xs rounded-full px-2 py-1">
                       {{ cartItemsCount }}
                     </span>
@@ -128,7 +127,7 @@
                     <svg class="w-4 h-4 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
                     </svg>
-                    My Orders
+                    Мои заказы
                   </div>
                 </router-link>
                 <div class="border-t border-gray-100 my-1"></div>
@@ -140,30 +139,30 @@
                     <svg class="w-4 h-4 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
                     </svg>
-                    Sign out
+                    Выйти
                   </div>
                 </button>
               </div>
             </transition>
           </div>
 
-          <!-- Login/Register Buttons -->
+          <!-- Кнопки Войти/Регистрация -->
           <div v-else class="flex items-center space-x-2">
             <router-link
               to="/login"
               class="px-4 py-2 text-sm font-medium text-gray-600 hover:text-black transition-colors"
             >
-              Sign in
+              Войти
             </router-link>
             <router-link
               to="/register"
               class="px-4 py-2 text-sm font-medium bg-black text-white rounded-md hover:bg-gray-800 transition-colors"
             >
-              Sign up
+              Регистрация
             </router-link>
           </div>
 
-          <!-- Mobile menu button -->
+          <!-- Кнопка мобильного меню -->
           <button
             @click="showMobileMenu = !showMobileMenu"
             class="md:hidden p-2 text-gray-600 hover:text-black focus:outline-none transition-colors"
@@ -176,7 +175,7 @@
         </div>
       </div>
 
-      <!-- Mobile Menu -->
+      <!-- Мобильное меню -->
       <transition name="slide-up">
         <div v-if="showMobileMenu" class="md:hidden py-4 border-t border-gray-200">
           <div class="space-y-1">
@@ -185,71 +184,71 @@
               class="block px-3 py-2 text-base font-medium text-gray-600 hover:text-black hover:bg-gray-100 rounded-md transition-colors"
               @click="showMobileMenu = false"
             >
-              Home
+              Главная
             </router-link>
             <router-link
               to="/catalog"
               class="block px-3 py-2 text-base font-medium text-gray-600 hover:text-black hover:bg-gray-100 rounded-md transition-colors"
               @click="showMobileMenu = false"
             >
-              Catalog
+              Каталог
             </router-link>
 
-            <!-- Mobile Search -->
+            <!-- Мобильный поиск -->
             <div class="px-3 py-2">
               <input
                 type="text"
                 v-model="searchQuery"
                 @keyup.enter="handleSearch"
-                placeholder="Search products..."
+                placeholder="Поиск товаров..."
                 class="w-full px-4 py-2 text-gray-700 bg-gray-50 border border-gray-200 rounded-lg focus:outline-none focus:bg-white focus:border-black focus:ring-2 focus:ring-black transition-all duration-200"
               >
             </div>
 
-            <!-- Mobile Cart Link -->
+            <!-- Ссылка на корзину в мобильном меню -->
             <router-link
               to="/cart"
               class="flex items-center justify-between px-3 py-2 text-base font-medium text-gray-600 hover:text-black hover:bg-gray-100 rounded-md transition-colors"
               @click="showMobileMenu = false"
             >
-              <span>Shopping Cart</span>
+              <span>Корзина</span>
               <span v-if="cartItemsCount > 0" class="bg-black text-white text-xs rounded-full px-2 py-1">
                 {{ cartItemsCount }}
               </span>
             </router-link>
 
-            <!-- Mobile Auth Links -->
+            <!-- Ссылки авторизации в мобильном меню -->
             <div v-if="!isAuthenticated" class="border-t border-gray-200 pt-4 mt-4">
               <router-link
                 to="/login"
                 class="block px-3 py-2 text-base font-medium text-gray-600 hover:text-black hover:bg-gray-100 rounded-md transition-colors"
                 @click="showMobileMenu = false"
               >
-                Sign in
+                Войти
               </router-link>
               <router-link
                 to="/register"
                 class="block px-3 py-2 text-base font-medium text-gray-600 hover:text-black hover:bg-gray-100 rounded-md transition-colors"
                 @click="showMobileMenu = false"
               >
-                Create account
+                Создать аккаунт
               </router-link>
             </div>
 
-            <!-- Mobile User Menu -->
+            <!-- Мобильное меню пользователя -->
             <div v-else class="border-t border-gray-200 pt-4 mt-4">
               <router-link
                 to="/profile"
                 class="block px-3 py-2 text-base font-medium text-gray-600 hover:text-black hover:bg-gray-100 rounded-md transition-colors"
                 @click="showMobileMenu = false"
               >
-                Profile
+                Профиль
               </router-link>
               <button
                 @click="handleLogout"
                 class="block w-full text-left px-3 py-2 text-base font-medium text-gray-600 hover:text-black hover:bg-gray-100 rounded-md transition-colors"
               >
-                Sign out
+                Выйти
               </button>
             </div>
           </div>
@@ -296,13 +295,13 @@ export default {
 
     const handleLogout = async () => {
       await authStore.logout()
-      await cartStore.reset() // Clear cart on logout
+      await cartStore.reset() // Очистить корзину при выходе
       showUserMenu.value = false
       showMobileMenu.value = false
       router.push('/')
     }
 
-    // Close user menu when clicking outside
+    // Закрыть меню пользователя при клике снаружи
     const handleClickOutside = (event) => {
       if (userMenu.value && !userMenu.value.contains(event.target)) {
         showUserMenu.value = false
@@ -312,16 +311,16 @@ export default {
     onMounted(async () => {
       document.addEventListener('click', handleClickOutside)
 
-      // Initialize auth state
-      console.log('Initializing auth state in header...')
+      // Инициализировать состояние авторизации
+      console.log('Инициализация состояния авторизации в заголовке...')
       await authStore.initialize()
 
-      // Fetch cart if user is authenticated
+      // Загрузить корзину если пользователь авторизован
       if (authStore.isAuthenticated) {
-        console.log('User authenticated, fetching cart...')
+        console.log('Пользователь авторизован, загружаем корзину...')
         await cartStore.fetchCart()
       } else {
-        console.log('User not authenticated, skipping cart fetch')
+        console.log('Пользователь не авторизован, пропускаем загрузку корзины')
       }
     })
 
@@ -330,20 +329,20 @@ export default {
     })
 
     return {
-      // Data
+      // Данные
       searchQuery,
       showUserMenu,
       showMobileMenu,
       userMenu,
 
-      // Computed
+      // Вычисляемые свойства
       isAuthenticated,
       userName,
       cartItemsCount,
       hasToken,
       isDev,
 
-      // Methods
+      // Методы
       handleSearch,
       handleLogout
     }

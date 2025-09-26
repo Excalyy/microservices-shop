@@ -11,7 +11,7 @@
       <!-- Stock Badge -->
       <div v-if="!product.is_in_stock" class="absolute top-2 left-2">
         <span class="px-2 py-1 bg-red-100 text-red-600 text-xs font-medium rounded-full">
-          Out of Stock
+          Нет в наличии
         </span>
       </div>
 
@@ -88,7 +88,7 @@
           class="flex-1 border-black text-black hover:bg-gray-100 focus:ring-black"
           @click="viewProduct"
         >
-          View Details
+          Посмотреть товар
         </BaseButton>
 
         <BaseButton
@@ -99,7 +99,7 @@
           :loading="addingToCart"
           @click="addToCart"
         >
-          Add to Cart
+          Добавить в корзину
         </BaseButton>
       </div>
     </div>
@@ -114,7 +114,7 @@ import ProductImage from '../common/ProductImage.vue'
 import { useToast } from '../../composables/useToast.js'
 
 export default {
-  name: 'ProductCard',
+  name: 'Карточка продукта',
   components: {
     BaseButton,
     ProductImage
@@ -125,7 +125,7 @@ export default {
       required: true
     }
   },
-  emits: ['add-to-cart'],
+  emits: ['добавить в корзину'],
   setup(props, { emit }) {
     const router = useRouter()
     const { showToast } = useToast()
@@ -142,7 +142,7 @@ export default {
 
     const addToCart = async () => {
       if (!props.product.is_in_stock) {
-        showToast('Product is out of stock', 'error')
+        showToast('Продукта нету на складе', 'ошибка')
         return
       }
 
@@ -152,9 +152,9 @@ export default {
         // Emit event to parent or handle cart logic
         emit('add-to-cart', props.product)
 
-        showToast(`${props.product.name} added to cart!`, 'success')
+        showToast(`${props.product.name} добавлено в корзину!`, 'успешно')
       } catch (error) {
-        showToast('Failed to add product to cart', 'error')
+        showToast('Не удалось добавить в корзину', 'ошибка')
       } finally {
         addingToCart.value = false
       }
