@@ -3,50 +3,50 @@
     "model": "products.category",
     "pk": 1,
     "fields": {
-      "name": "Electronics",
+      "name": "Электроника",
       "slug": "electronics",
-      "description": "Electronic devices and gadgets",
-      "created_at": "2025-01-01T10:00:00Z"
+      "description": "Электронные устройства и гаджеты",
+      "created_at": "2024-01-01T10:00:00Z"
     }
   },
   {
     "model": "products.category",
     "pk": 2,
     "fields": {
-      "name": "Books",
+      "name": "Книги",
       "slug": "books",
-      "description": "Books and literature",
-      "created_at": "2025-01-01T10:00:00Z"
+      "description": "Книги и литература",
+      "created_at": "2024-01-01T10:00:00Z"
     }
   },
   {
     "model": "products.category",
     "pk": 3,
     "fields": {
-      "name": "Clothing",
+      "name": "Одежда",
       "slug": "clothing",
-      "description": "Clothes and accessories",
-      "created_at": "2025-01-01T10:00:00Z"
+      "description": "Одежда и аксессуары",
+      "created_at": "2024-01-01T10:00:00Z"
     }
   },
   {
     "model": "products.category",
     "pk": 4,
     "fields": {
-      "name": "Home & Garden",
+      "name": "Дом и Сад",
       "slug": "home-garden",
-      "description": "Home improvement and garden supplies",
-      "created_at": "2025-01-01T10:00:00Z"
+      "description": "Товары для дома и сада",
+      "created_at": "2024-01-01T10:00:00Z"
     }
   },
   {
     "model": "products.category",
     "pk": 5,
     "fields": {
-      "name": "Sports & Outdoors",
+      "name": "Спорт и Отдых",
       "slug": "sports-outdoors",
-      "description": "Sports equipment and outdoor gear",
-      "created_at": "2025-01-01T10:00:00Z"
+      "description": "Спортивное снаряжение и товары для активного отдыха",
+      "created_at": "2024-01-01T10:00:00Z"
     }
   },
   {
@@ -54,14 +54,14 @@
     "pk": 1,
     "fields": {
       "name": "iPhone 15 Pro",
-      "description": "The most advanced iPhone yet with titanium design, A17 Pro chip, and pro camera system",
+      "description": "Самый продвинутый iPhone с титановым дизайном, чипом A17 Pro и профессиональной системой камер",
       "price": "999.00",
       "category": 1,
       "stock_quantity": 50,
       "image_url": "https://via.placeholder.com/400x400/1f2937/ffffff?text=iPhone+15+Pro",
       "is_active": true,
-      "created_at": "2025-01-15T10:00:00Z",
-      "updated_at": "2025-01-15T10:00:00Z"
+      "created_at": "2024-09-15T10:00:00Z",
+      "updated_at": "2024-09-15T10:00:00Z"
     }
   },
   {
@@ -69,164 +69,164 @@
     "pk": 2,
     "fields": {
       "name": "MacBook Pro 14\"",
-      "description": "Professional laptop with M3 chip, perfect for developers and creative professionals",
+      "description": "Профессиональный ноутбук с чипом M3, идеальный для разработчиков и творческих специалистов",
       "price": "2499.00",
       "category": 1,
       "stock_quantity": 25,
       "image_url": "https://via.placeholder.com/400x400/1f2937/ffffff?text=MacBook+Pro",
       "is_active": true,
-      "created_at": "2025-01-16T10:00:00Z",
-      "updated_at": "2025-01-16T10:00:00Z"
+      "created_at": "2024-09-16T10:00:00Z",
+      "updated_at": "2024-09-16T10:00:00Z"
     }
   },
   {
     "model": "products.product",
     "pk": 3,
     "fields": {
-      "name": "Python Programming: Complete Guide",
-      "description": "Comprehensive guide to Python programming from beginner to advanced level",
+      "name": "Программирование на Python: Полное руководство",
+      "description": "Всеобъемлющее руководство по программированию на Python от начального до продвинутого уровня",
       "price": "49.99",
       "category": 2,
       "stock_quantity": 100,
-      "image_url": "https://via.placeholder.com/400x400/3b82f6/ffffff?text=Python+Book",
+      "image_url": "https://via.placeholder.com/400x400/3b82f6/ffffff?text=Python+%D0%9A%D0%BD%D0%B8%D0%B3%D0%B0",
       "is_active": true,
-      "created_at": "2025-01-17T10:00:00Z",
-      "updated_at": "2025-01-17T10:00:00Z"
+      "created_at": "2024-09-17T10:00:00Z",
+      "updated_at": "2024-09-17T10:00:00Z"
     }
   },
   {
     "model": "products.product",
     "pk": 4,
     "fields": {
-      "name": "AirPods Pro (3rd generation)",
-      "description": "Wireless earbuds with active noise cancellation and spatial audio",
+      "name": "AirPods Pro (3-го поколения)",
+      "description": "Беспроводные наушники с активным шумоподавлением и пространственным аудио",
       "price": "249.00",
       "category": 1,
       "stock_quantity": 75,
       "image_url": "https://via.placeholder.com/400x400/1f2937/ffffff?text=AirPods+Pro",
       "is_active": true,
-      "created_at": "2025-01-18T10:00:00Z",
-      "updated_at": "2025-01-18T10:00:00Z"
+      "created_at": "2024-09-18T10:00:00Z",
+      "updated_at": "2024-09-18T10:00:00Z"
     }
   },
   {
     "model": "products.product",
     "pk": 5,
     "fields": {
-      "name": "Classic White T-Shirt",
-      "description": "100% cotton classic fit t-shirt, perfect for everyday wear",
+      "name": "Классическая белая футболка",
+      "description": "Футболка классического кроя из 100% хлопка, идеальна для повседневной носки",
       "price": "19.99",
       "category": 3,
       "stock_quantity": 200,
-      "image_url": "https://via.placeholder.com/400x400/f3f4f6/1f2937?text=T-Shirt",
+      "image_url": "https://via.placeholder.com/400x400/f3f4f6/1f2937?text=%D0%A4%D1%83%D1%82%D0%B1%D0%BE%D0%BB%D0%BA%D0%B0",
       "is_active": true,
-      "created_at": "2025-01-19T10:00:00Z",
-      "updated_at": "2025-01-19T10:00:00Z"
+      "created_at": "2024-09-19T10:00:00Z",
+      "updated_at": "2024-09-19T10:00:00Z"
     }
   },
   {
     "model": "products.product",
     "pk": 6,
     "fields": {
-      "name": "Smart Home Hub",
-      "description": "Control all your smart devices from one central hub with voice commands",
+      "name": "Умный домашний хаб",
+      "description": "Управляйте всеми умными устройствами из одного центра с помощью голосовых команд",
       "price": "129.99",
       "category": 4,
       "stock_quantity": 40,
       "image_url": "https://via.placeholder.com/400x400/059669/ffffff?text=Smart+Hub",
       "is_active": true,
-      "created_at": "2025-01-20T10:00:00Z",
-      "updated_at": "2025-01-20T10:00:00Z"
+      "created_at": "2024-09-20T10:00:00Z",
+      "updated_at": "2024-09-20T10:00:00Z"
     }
   },
   {
     "model": "products.product",
     "pk": 7,
     "fields": {
-      "name": "JavaScript: The Definitive Guide",
-      "description": "Master modern JavaScript with this comprehensive reference book",
+      "name": "JavaScript: Полное руководство",
+      "description": "Освойте современный JavaScript с помощью этого всеобъемлющего справочника",
       "price": "59.99",
       "category": 2,
       "stock_quantity": 80,
-      "image_url": "https://via.placeholder.com/400x400/f59e0b/ffffff?text=JS+Book",
+      "image_url": "https://via.placeholder.com/400x400/f59e0b/ffffff?text=JS+%D0%9A%D0%BD%D0%B8%D0%B3%D0%B0",
       "is_active": true,
-      "created_at": "2025-01-21T10:00:00Z",
-      "updated_at": "2025-01-21T10:00:00Z"
+      "created_at": "2024-09-21T10:00:00Z",
+      "updated_at": "2024-09-21T10:00:00Z"
     }
   },
   {
     "model": "products.product",
     "pk": 8,
     "fields": {
-      "name": "Wireless Keyboard & Mouse Set",
-      "description": "Ergonomic wireless keyboard and mouse combo for comfortable computing",
+      "name": "Беспроводной комплект клавиатуры и мыши",
+      "description": "Эргономичный беспроводной комплект клавиатуры и мыши для комфортной работы",
       "price": "89.99",
       "category": 1,
       "stock_quantity": 60,
       "image_url": "https://via.placeholder.com/400x400/6366f1/ffffff?text=Keyboard+Set",
       "is_active": true,
-      "created_at": "2025-01-22T10:00:00Z",
-      "updated_at": "2025-01-22T10:00:00Z"
+      "created_at": "2024-09-22T10:00:00Z",
+      "updated_at": "2024-09-22T10:00:00Z"
     }
   },
   {
     "model": "products.product",
     "pk": 9,
     "fields": {
-      "name": "Premium Denim Jeans",
-      "description": "High-quality denim jeans with modern fit and premium finishing",
+      "name": "Джинсы премиум-класса",
+      "description": "Джинсы из высококачественного денима с современным кроем и премиальной отделкой",
       "price": "79.99",
       "category": 3,
       "stock_quantity": 120,
-      "image_url": "https://via.placeholder.com/400x400/1e40af/ffffff?text=Denim+Jeans",
+      "image_url": "https://via.placeholder.com/400x400/1e40af/ffffff?text=%D0%94%D0%B6%D0%B8%D0%BD%D1%81%D1%8B",
       "is_active": true,
-      "created_at": "2025-01-23T10:00:00Z",
-      "updated_at": "2025-01-23T10:00:00Z"
+      "created_at": "2024-09-23T10:00:00Z",
+      "updated_at": "2024-09-23T10:00:00Z"
     }
   },
   {
     "model": "products.product",
     "pk": 10,
     "fields": {
-      "name": "LED Desk Lamp",
-      "description": "Adjustable LED desk lamp with multiple brightness levels and USB charging port",
+      "name": "Светодиодная настольная лампа",
+      "description": "Регулируемая светодиодная настольная лампа с несколькими уровнями яркости и USB-портом для зарядки",
       "price": "39.99",
       "category": 4,
       "stock_quantity": 90,
       "image_url": "https://via.placeholder.com/400x400/dc2626/ffffff?text=Desk+Lamp",
       "is_active": true,
-      "created_at": "2025-01-24T10:00:00Z",
-      "updated_at": "2025-01-24T10:00:00Z"
+      "created_at": "2024-09-24T10:00:00Z",
+      "updated_at": "2024-09-24T10:00:00Z"
     }
   },
   {
     "model": "products.product",
     "pk": 11,
     "fields": {
-      "name": "4K Webcam",
-      "description": "Ultra HD webcam with auto-focus and built-in microphone for professional video calls",
+      "name": "4K Веб-камера",
+      "description": "Веб-камера Ultra HD с автофокусом и встроенным микрофоном для профессиональных видеозвонков",
       "price": "149.99",
       "category": 1,
       "stock_quantity": 35,
       "image_url": "https://via.placeholder.com/400x400/7c3aed/ffffff?text=4K+Webcam",
       "is_active": true,
-      "created_at": "2025-01-25T10:00:00Z",
-      "updated_at": "2025-01-25T10:00:00Z"
+      "created_at": "2024-09-25T10:00:00Z",
+      "updated_at": "2024-09-25T10:00:00Z"
     }
   },
   {
     "model": "products.product",
     "pk": 12,
     "fields": {
-      "name": "React Development Handbook",
-      "description": "Learn React development with hooks, context, and modern patterns",
+      "name": "Руководство по разработке на React",
+      "description": "Изучите разработку на React с хуками, контекстом и современными паттернами",
       "price": "44.99",
       "category": 2,
       "stock_quantity": 65,
-      "image_url": "https://via.placeholder.com/400x400/0891b2/ffffff?text=React+Book",
+      "image_url": "https://via.placeholder.com/400x400/0891b2/ffffff?text=React+%D0%9A%D0%BD%D0%B8%D0%B3%D0%B0",
       "is_active": true,
-      "created_at": "2025-01-26T10:00:00Z",
-      "updated_at": "2025-01-26T10:00:00Z"
+      "created_at": "2024-09-26T10:00:00Z",
+      "updated_at": "2024-09-26T10:00:00Z"
     }
   },
   {
@@ -234,14 +234,14 @@
     "pk": 13,
     "fields": {
       "name": "Samsung Galaxy S24",
-      "description": "Latest Samsung flagship with advanced AI features and incredible camera system",
+      "description": "Последний флагманский телефон Samsung с продвинутыми функциями ИИ и невероятной системой камер",
       "price": "899.00",
       "category": 1,
       "stock_quantity": 30,
       "image_url": "https://via.placeholder.com/400x400/1f2937/ffffff?text=Samsung+Galaxy",
       "is_active": true,
-      "created_at": "2025-01-27T10:00:00Z",
-      "updated_at": "2025-01-27T10:00:00Z"
+      "created_at": "2024-09-27T10:00:00Z",
+      "updated_at": "2024-09-27T10:00:00Z"
     }
   },
   {
@@ -249,14 +249,14 @@
     "pk": 14,
     "fields": {
       "name": "iPad Pro 12.9\"",
-      "description": "Professional tablet with M2 chip and Apple Pencil support for creative work",
+      "description": "Профессиональный планшет с чипом M2 и поддержкой Apple Pencil для творческой работы",
       "price": "1099.00",
       "category": 1,
       "stock_quantity": 20,
       "image_url": "https://via.placeholder.com/400x400/1f2937/ffffff?text=iPad+Pro",
       "is_active": true,
-      "created_at": "2025-01-28T10:00:00Z",
-      "updated_at": "2025-01-28T10:00:00Z"
+      "created_at": "2024-09-28T10:00:00Z",
+      "updated_at": "2024-09-28T10:00:00Z"
     }
   },
   {
@@ -264,14 +264,14 @@
     "pk": 15,
     "fields": {
       "name": "Sony WH-1000XM5",
-      "description": "Premium noise-canceling wireless headphones with exceptional audio quality",
+      "description": "Премиальные беспроводные наушники с шумоподавлением и исключительным качеством звука",
       "price": "399.00",
       "category": 1,
       "stock_quantity": 45,
       "image_url": "https://via.placeholder.com/400x400/1f2937/ffffff?text=Sony+Headphones",
       "is_active": true,
-      "created_at": "2025-01-29T10:00:00Z",
-      "updated_at": "2025-01-29T10:00:00Z"
+      "created_at": "2024-09-29T10:00:00Z",
+      "updated_at": "2024-09-29T10:00:00Z"
     }
   },
   {
@@ -279,59 +279,59 @@
     "pk": 16,
     "fields": {
       "name": "Nintendo Switch OLED",
-      "description": "Gaming console with vibrant OLED display for home and portable gaming",
+      "description": "Игровая консоль с ярким OLED-дисплеем для домашнего и портативного гейминга",
       "price": "349.99",
       "category": 1,
       "stock_quantity": 25,
       "image_url": "https://via.placeholder.com/400x400/e11d48/ffffff?text=Nintendo+Switch",
       "is_active": true,
-      "created_at": "2025-01-30T10:00:00Z",
-      "updated_at": "2025-01-30T10:00:00Z"
+      "created_at": "2024-09-30T10:00:00Z",
+      "updated_at": "2024-09-30T10:00:00Z"
     }
   },
   {
     "model": "products.product",
     "pk": 17,
     "fields": {
-      "name": "Django for Professionals",
-      "description": "Advanced Django web development guide with real-world projects",
+      "name": "Django для профессионалов",
+      "description": "Руководство по продвинутой веб-разработке на Django с реальными проектами",
       "price": "39.99",
       "category": 2,
       "stock_quantity": 75,
-      "image_url": "https://via.placeholder.com/400x400/059669/ffffff?text=Django+Book",
+      "image_url": "https://via.placeholder.com/400x400/059669/ffffff?text=Django+%D0%9A%D0%BD%D0%B8%D0%B3%D0%B0",
       "is_active": true,
-      "created_at": "2025-01-31T10:00:00Z",
-      "updated_at": "2025-01-31T10:00:00Z"
+      "created_at": "2024-10-01T10:00:00Z",
+      "updated_at": "2024-10-01T10:00:00Z"
     }
   },
   {
     "model": "products.product",
     "pk": 18,
     "fields": {
-      "name": "Clean Code",
-      "description": "A handbook of agile software craftsmanship by Robert Martin",
+      "name": "Чистый код",
+      "description": "Руководство по гибкой разработке программного обеспечения от Роберта Мартина",
       "price": "42.99",
       "category": 2,
       "stock_quantity": 60,
       "image_url": "https://via.placeholder.com/400x400/dc2626/ffffff?text=Clean+Code",
       "is_active": true,
-      "created_at": "2025-02-01T10:00:00Z",
-      "updated_at": "2025-02-01T10:00:00Z"
+      "created_at": "2024-10-02T10:00:00Z",
+      "updated_at": "2024-10-02T10:00:00Z"
     }
   },
   {
     "model": "products.product",
     "pk": 19,
     "fields": {
-      "name": "System Design Interview",
-      "description": "An insider's guide to ace the system design interview",
+      "name": "Собеседование по системному дизайну",
+      "description": "Инсайдерское руководство по подготовке к собеседованию по системному дизайну",
       "price": "35.99",
       "category": 2,
       "stock_quantity": 55,
       "image_url": "https://via.placeholder.com/400x400/7c3aed/ffffff?text=System+Design",
       "is_active": true,
-      "created_at": "2025-02-02T10:00:00Z",
-      "updated_at": "2025-02-02T10:00:00Z"
+      "created_at": "2024-10-03T10:00:00Z",
+      "updated_at": "2024-10-03T10:00:00Z"
     }
   },
   {
@@ -339,164 +339,164 @@
     "pk": 20,
     "fields": {
       "name": "Nike Air Force 1",
-      "description": "Classic white sneakers for everyday wear, timeless design",
+      "description": "Классические белые кроссовки для повседневной носки, вневременной дизайн",
       "price": "119.99",
       "category": 3,
       "stock_quantity": 85,
       "image_url": "https://via.placeholder.com/400x400/000000/ffffff?text=Nike+Shoes",
       "is_active": true,
-      "created_at": "2025-02-03T10:00:00Z",
-      "updated_at": "2025-02-03T10:00:00Z"
+      "created_at": "2024-10-04T10:00:00Z",
+      "updated_at": "2024-10-04T10:00:00Z"
     }
   },
   {
     "model": "products.product",
     "pk": 21,
     "fields": {
-      "name": "Levi's 501 Jeans",
-      "description": "Original straight fit jeans, the gold standard of denim",
+      "name": "Джинсы Levi's 501",
+      "description": "Оригинальные джинсы прямого кроя, золотой стандарт денима",
       "price": "89.99",
       "category": 3,
       "stock_quantity": 100,
       "image_url": "https://via.placeholder.com/400x400/1e40af/ffffff?text=Levis+Jeans",
       "is_active": true,
-      "created_at": "2025-02-04T10:00:00Z",
-      "updated_at": "2025-02-04T10:00:00Z"
+      "created_at": "2024-10-05T10:00:00Z",
+      "updated_at": "2024-10-05T10:00:00Z"
     }
   },
   {
     "model": "products.product",
     "pk": 22,
     "fields": {
-      "name": "Adidas Hoodie",
-      "description": "Comfortable cotton hoodie perfect for casual wear and workouts",
+      "name": "Толстовка Adidas",
+      "description": "Удобная хлопковая толстовка, идеальная для повседневной носки и тренировок",
       "price": "69.99",
       "category": 3,
       "stock_quantity": 70,
       "image_url": "https://via.placeholder.com/400x400/1f2937/ffffff?text=Adidas+Hoodie",
       "is_active": true,
-      "created_at": "2025-02-05T10:00:00Z",
-      "updated_at": "2025-02-05T10:00:00Z"
+      "created_at": "2024-10-06T10:00:00Z",
+      "updated_at": "2024-10-06T10:00:00Z"
     }
   },
   {
     "model": "products.product",
     "pk": 23,
     "fields": {
-      "name": "Coffee Maker Pro",
-      "description": "Professional coffee machine with programmable features and built-in grinder",
+      "name": "Кофемашина Pro",
+      "description": "Профессиональная кофемашина с программируемыми функциями и встроенной кофемолкой",
       "price": "199.99",
       "category": 4,
       "stock_quantity": 25,
       "image_url": "https://via.placeholder.com/400x400/8b5cf6/ffffff?text=Coffee+Maker",
       "is_active": true,
-      "created_at": "2025-02-06T10:00:00Z",
-      "updated_at": "2025-02-06T10:00:00Z"
+      "created_at": "2024-10-07T10:00:00Z",
+      "updated_at": "2024-10-07T10:00:00Z"
     }
   },
   {
     "model": "products.product",
     "pk": 24,
     "fields": {
-      "name": "Robot Vacuum",
-      "description": "Smart robot vacuum with mapping, app control and auto-emptying base",
+      "name": "Робот-пылесос",
+      "description": "Умный робот-пылесос с картографированием, управлением через приложение и автоматической станцией очистки",
       "price": "299.99",
       "category": 4,
       "stock_quantity": 15,
       "image_url": "https://via.placeholder.com/400x400/059669/ffffff?text=Robot+Vacuum",
       "is_active": true,
-      "created_at": "2025-02-07T10:00:00Z",
-      "updated_at": "2025-02-07T10:00:00Z"
+      "created_at": "2024-10-08T10:00:00Z",
+      "updated_at": "2024-10-08T10:00:00Z"
     }
   },
   {
     "model": "products.product",
     "pk": 25,
     "fields": {
-      "name": "Air Purifier",
-      "description": "HEPA air purifier for large rooms with smart controls",
+      "name": "Очиститель воздуха",
+      "description": "HEPA очиститель воздуха для больших помещений с умным управлением",
       "price": "149.99",
       "category": 4,
       "stock_quantity": 20,
       "image_url": "https://via.placeholder.com/400x400/0891b2/ffffff?text=Air+Purifier",
       "is_active": true,
-      "created_at": "2025-02-08T10:00:00Z",
-      "updated_at": "2025-02-08T10:00:00Z"
+      "created_at": "2024-10-09T10:00:00Z",
+      "updated_at": "2024-10-09T10:00:00Z"
     }
   },
   {
     "model": "products.product",
     "pk": 26,
     "fields": {
-      "name": "Yoga Mat Premium",
-      "description": "High-quality non-slip yoga mat for all types of exercise and meditation",
+      "name": "Йога-мат Премиум",
+      "description": "Высококачественный не скользящий йога-мат для всех видов упражнений и медитации",
       "price": "49.99",
       "category": 5,
       "stock_quantity": 50,
       "image_url": "https://via.placeholder.com/400x400/ec4899/ffffff?text=Yoga+Mat",
       "is_active": true,
-      "created_at": "2025-02-09T10:00:00Z",
-      "updated_at": "2025-02-09T10:00:00Z"
+      "created_at": "2024-10-10T10:00:00Z",
+      "updated_at": "2024-10-10T10:00:00Z"
     }
   },
   {
     "model": "products.product",
     "pk": 27,
     "fields": {
-      "name": "Dumbbells Set",
-      "description": "Adjustable dumbbells set for home workouts, space-saving design",
+      "name": "Набор гантелей",
+      "description": "Регулируемый набор гантелей для домашних тренировок, компактная конструкция",
       "price": "159.99",
       "category": 5,
       "stock_quantity": 30,
       "image_url": "https://via.placeholder.com/400x400/374151/ffffff?text=Dumbbells",
       "is_active": true,
-      "created_at": "2025-02-10T10:00:00Z",
-      "updated_at": "2025-02-10T10:00:00Z"
+      "created_at": "2024-10-11T10:00:00Z",
+      "updated_at": "2024-10-11T10:00:00Z"
     }
   },
   {
     "model": "products.product",
     "pk": 28,
     "fields": {
-      "name": "Resistance Bands Kit",
-      "description": "Complete resistance bands set with multiple resistance levels",
+      "name": "Набор эспандеров",
+      "description": "Полный набор эспандеров с несколькими уровнями сопротивления",
       "price": "29.99",
       "category": 5,
       "stock_quantity": 80,
       "image_url": "https://via.placeholder.com/400x400/f59e0b/ffffff?text=Resistance+Bands",
       "is_active": true,
-      "created_at": "2025-02-11T10:00:00Z",
-      "updated_at": "2025-02-11T10:00:00Z"
+      "created_at": "2024-10-12T10:00:00Z",
+      "updated_at": "2024-10-12T10:00:00Z"
     }
   },
   {
     "model": "products.product",
     "pk": 29,
     "fields": {
-      "name": "Gaming Mouse RGB",
-      "description": "High-precision gaming mouse with customizable RGB lighting",
+      "name": "Игровая мышь RGB",
+      "description": "Высокоточная игровая мышь с настраиваемой RGB-подсветкой",
       "price": "59.99",
       "category": 1,
       "stock_quantity": 40,
       "image_url": "https://via.placeholder.com/400x400/ef4444/ffffff?text=Gaming+Mouse",
       "is_active": true,
-      "created_at": "2025-02-12T10:00:00Z",
-      "updated_at": "2025-02-12T10:00:00Z"
+      "created_at": "2024-10-13T10:00:00Z",
+      "updated_at": "2024-10-13T10:00:00Z"
     }
   },
   {
     "model": "products.product",
     "pk": 30,
     "fields": {
-      "name": "Mechanical Keyboard",
-      "description": "Cherry MX Blue switches mechanical keyboard for typing enthusiasts",
+      "name": "Механическая клавиатура",
+      "description": "Механическая клавиатура с переключателями Cherry MX Blue для энтузиастов печати",
       "price": "129.99",
       "category": 1,
       "stock_quantity": 35,
       "image_url": "https://via.placeholder.com/400x400/8b5cf6/ffffff?text=Mechanical+KB",
       "is_active": true,
-      "created_at": "2025-02-13T10:00:00Z",
-      "updated_at": "2025-02-13T10:00:00Z"
+      "created_at": "2024-10-14T10:00:00Z",
+      "updated_at": "2024-10-14T10:00:00Z"
     }
   }
 ]

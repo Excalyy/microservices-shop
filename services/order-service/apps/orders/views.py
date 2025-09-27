@@ -129,7 +129,7 @@ def create_order(request):
 
                 # Добавляем специальные инструкции как комментарий
                 if special_instructions:
-                    order.shipping_address += f"\n\nSpecial Instructions: {special_instructions}"
+                    order.shipping_address += f"\n\nПожелания: {special_instructions}"
                     order.save()
 
                 # Публикуем событие о создании заказа
