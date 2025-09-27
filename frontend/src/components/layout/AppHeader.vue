@@ -9,6 +9,8 @@
               <span class="text-white font-bold text-sm">MS</span>
             </div>
             <span class="text-xl font-bold text-black">MicroShop</span>
+            <span></span>
+            <span></span>
           </router-link>
         </div>
 
